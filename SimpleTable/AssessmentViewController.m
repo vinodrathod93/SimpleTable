@@ -7,20 +7,24 @@
 //
 
 #import "AssessmentViewController.h"
-#import "SliderAssessmentTableViewCell.h"
+#import <TNRadioButtonGroup/TNRadioButtonGroup.h>
 #import <CoreText/CoreText.h>
 
 @interface AssessmentViewController ()
 
 @end
 
-@implementation AssessmentViewController
+@implementation AssessmentViewController {
+    NSMutableDictionary *_sliderDicValues;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.tableView.dataSource = self;
     self.tableView.delegate   = self;
+    
+    _sliderDicValues = [[NSMutableDictionary alloc] init];
     
     self.contentView.layer.cornerRadius = 6.f;
     self.tableView.backgroundColor = [UIColor clearColor];
@@ -40,20 +44,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)sliderValueChanged:(UISlider *)sender {
-    
-    NSLog(@"Slider changed value %f", sender.value);
-    
-    
-    SliderAssessmentTableViewCell *cell = (SliderAssessmentTableViewCell *)[[sender superview] superview];
-    
-    int discreteValue = roundl([sender value]); // Rounds float to an integer
-    [sender setValue:(float)discreteValue];
-    
-    cell.slidingValue.text = [NSString stringWithFormat:@"%d", discreteValue];
-    
 }
 
 
@@ -76,27 +66,25 @@
     static NSString *radioButtonCellIdentifier = @"radioButtonCellIdentifier";
     static NSString *sliderCellIdentifier   = @"slidingAssessmentIdentifier";
     
-     NSArray *options = self.details[@"options"];
+    NSArray *options = self.details[@"options"];
     
-    NSString *cellIdentifier = options == nil ? sliderCellIdentifier : radioButtonCellIdentifier;
-    
-    id cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    id cell;
     
     if (options == nil) {
+        cell = [tableView dequeueReusableCellWithIdentifier:sliderCellIdentifier forIndexPath:indexPath];
         [self configureSliderCell:cell forIndexPath:indexPath];
     }
     else {
         
+        cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:radioButtonCellIdentifier];
+        
         NSArray *question_options = options[indexPath.row];
-        if (cell == nil) {
+        if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:radioButtonCellIdentifier];
         }
         [self configureRadioButtonCell:cell forIndexPath:indexPath withQuestionOptions:question_options];
         
     }
-    
-    // Configure the cell...
-    
     
     
     return cell;
@@ -105,48 +93,87 @@
 
 -(void)configureSliderCell:(SliderAssessmentTableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
     
-    if (cell == nil) {
-        
-        NSLog(@"Blank Slider Cell");
-//        cell = [SliderAssessmentTableViewCell alloc] initWithStyle:<#(UITableViewCellStyle)#> reuseIdentifier:<#(nullable NSString *)#>
-    }
-    
     NSArray *questions = self.details[@"questions"];
     
     
     cell.question.text      = questions[indexPath.row];
     cell.question.textColor = [self darkerColorForColor:self.navBarColor];
     cell.backgroundColor = [UIColor clearColor];
-    [cell.slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
-    cell.slidingValue.text = [NSString stringWithFormat:@"%d", (int)cell.slider.value];
     
-    cell.slider.tag = 10 + indexPath.row;
+    if([_sliderDicValues objectForKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]]) //check if there is any slided value is present
+    {
+        NSNumber *value = [_sliderDicValues objectForKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
+        [cell.slider setValue:value.integerValue]; //set the slider value
+        [cell.slidingValue setText:[NSString stringWithFormat:@"%ld",(long)value.integerValue]];//and also label
+    }
+    else //set to default values
+    {
+        [cell.slider setValue:(NSInteger)0];
+        [cell.slidingValue setText:@"0"];
+    }
+    //add a single target don't add double target to slider
+    cell.sliderDelegate = self;
+    
+}
+
+-(void)sliderChanged:(SliderAssessmentTableViewCell *)cell {
+    NSIndexPath *path = [self.tableView indexPathForCell:cell]; //get the indexpath
+    if(path)//check if valid path
+    {
+        int value = cell.slider.value;
+        [_sliderDicValues setObject:[NSNumber numberWithInt:value] forKey:[NSString stringWithFormat:@"%ld",(long)path.row]]; //set the value in the dictionary later used in the cellForRowAtIndexPath method
+    }
+    
 }
 
 
 -(void)configureRadioButtonCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath withQuestionOptions:(NSArray *)question_options {
     
+    cell.backgroundColor = [UIColor clearColor];
+    
     NSArray *questions = self.details[@"questions"];
-    UILabel *question = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, self.tableView.frame.size.width - 8, 20)];
+    
+    CGFloat height = [self findHeightForText:questions[indexPath.row] havingWidth:self.tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Medium" size:15.f]].height;
+    
+    UILabel *question = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, self.tableView.frame.size.width - 8, height)];
+    question.font = [UIFont fontWithName:@"AvenirNext-Medium" size:15.f];
+    question.textColor = [self darkerColorForColor:self.navBarColor];
+    question.numberOfLines = 0;
     question.text       = questions[indexPath.row];
     
     [cell.contentView addSubview:question];
     
+    NSMutableArray *array = [[NSMutableArray alloc] init];
     
     [question_options enumerateObjectsUsingBlock:^(NSString * _Nonnull option, NSUInteger idx, BOOL * _Nonnull stop) {
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(8, 28 + (15 * idx), self.tableView.frame.size.width - 8, 15)];
-        [button setTitle:option forState:UIControlStateNormal];
-        button.imageView.image = [UIImage imageNamed:@"radio-off"];
-        button.tag = idx;
+        TNCircularRadioButtonData *button = [TNCircularRadioButtonData new];
+        button.labelText = option;
+        button.identifier = option;
+        if (idx == 0) {
+            button.selected = YES;
+        }
+        else
+            button.selected = NO;
+        button.borderRadius = 12;
+        button.circleRadius = 5;
         
-        [cell.contentView addSubview:button];
+        [array addObject:button];
     }];
+    
+    TNRadioButtonGroup *group = [[TNRadioButtonGroup alloc] initWithRadioButtonData:array layout:TNRadioButtonGroupLayoutVertical];
+    group.identifier = @"Sex group";
+    [group create];
+    group.position = CGPointMake(10, 8+height+8);
+//    group
+    [cell.contentView addSubview:group];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSArray *questions = self.details[@"questions"];
     NSArray *options = self.details[@"options"];
+    
+    CGFloat height1 = [self findHeightForText:questions[indexPath.row] havingWidth:self.tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Medium" size:15.f]].height;
     
     if (options[indexPath.row] == nil) {
         NSString *string = questions[indexPath.row];
@@ -162,7 +189,7 @@
     else {
         
         NSArray *question_options = options[indexPath.row];
-        CGFloat height = 28 + (15 * question_options.count) + 8;
+        CGFloat height = height1 + (35 * question_options.count);
         
         return height;
     }

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SliderAssessmentTableViewCell.h"
 
-@interface AssessmentViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface AssessmentViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, SliderAssessmentDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

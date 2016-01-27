@@ -285,6 +285,9 @@
                                                             <rect key="frame" x="6" y="37.5" width="562" height="31"/>
                                                             <animations/>
                                                             <color key="minimumTrackTintColor" red="0.12549019610000001" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <connections>
+                                                                <action selector="sliderValueChanged:" destination="oVr-hO-oML" eventType="valueChanged" id="FWP-JA-jKd"/>
+                                                            </connections>
                                                         </slider>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LkB-Fb-a7v">
                                                             <rect key="frame" x="8" y="71" width="558" height="20.5"/>
@@ -314,16 +317,6 @@
                                                     <outlet property="slider" destination="65Y-bq-L5z" id="PKp-Uc-3oD"/>
                                                     <outlet property="slidingValue" destination="LkB-Fb-a7v" id="fT6-JH-cmV"/>
                                                 </connections>
-                                            </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="radioButtonCellIdentifier" id="0m4-IR-ajB">
-                                                <rect key="frame" x="0.0" y="149.5" width="574" height="100"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0m4-IR-ajB" id="FWP-cB-umt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="574" height="100"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <animations/>
-                                                </tableViewCellContentView>
-                                                <animations/>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>

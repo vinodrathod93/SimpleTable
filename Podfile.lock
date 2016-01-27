@@ -1,0 +1,10 @@
+PODS:
+  - TNRadioButtonGroup (0.4)
+
+DEPENDENCIES:
+  - TNRadioButtonGroup
+
+SPEC CHECKSUMS:
+  TNRadioButtonGroup: f5fb9b545d8913bbabe6a72ea1fa6fba4d833bb6
+
+COCOAPODS: 0.39.0
