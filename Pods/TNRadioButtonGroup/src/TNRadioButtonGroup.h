@@ -31,6 +31,10 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSArray *radioButtons;
 @property (nonatomic, weak) TNRadioButton *selectedRadioButton;
 
+
+@property (nonatomic, strong) NSArray *radioButtonData;
+@property (nonatomic) TNRadioButtonGroupLayout layout;
+
 - (instancetype)initWithRadioButtonData:(NSArray *)radioButtonData layout:(TNRadioButtonGroupLayout)layout;
 - (void)create;
 - (void)update;

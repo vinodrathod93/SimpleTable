@@ -12,5 +12,5 @@
 @interface RadioButtonCell : UITableViewCell
 
 @property (nonatomic, strong) TNRadioButtonGroup *optionsGroup;
-
+@property (nonatomic, strong) UILabel *question;
 @end

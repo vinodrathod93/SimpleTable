@@ -12,8 +12,7 @@ NSString *const SELECTED_RADIO_BUTTON_CHANGED = @"selectedRadioButtonChanged";
 
 @interface TNRadioButtonGroup()
 
-@property (nonatomic, strong) NSArray *radioButtonData;
-@property (nonatomic) TNRadioButtonGroupLayout layout;
+//removed from here to .h file
 @property (nonatomic) NSInteger widthOfComponent;
 @property (nonatomic) NSInteger heightOfComponent;
 

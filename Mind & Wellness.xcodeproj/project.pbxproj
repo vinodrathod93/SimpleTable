@@ -64,14 +64,14 @@
 		67E75EA01C5559A100B6A88A /* SliderAssessmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderAssessmentTableViewCell.m; sourceTree = "<group>"; };
 		E0A582C4504FC338CC38C066 /* libPods-SimpleTable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleTable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F479E158155E3E99005C48B1 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
-		F4FFD300153BF3E800759785 /* SimpleTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4FFD300153BF3E800759785 /* Mind & Wellness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mind & Wellness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FFD304153BF3E800759785 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F4FFD306153BF3E800759785 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F4FFD308153BF3E800759785 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F4FFD30C153BF3E800759785 /* SimpleTable-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleTable-Info.plist"; sourceTree = "<group>"; };
+		F4FFD30C153BF3E800759785 /* Mind & Wellness-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mind & Wellness-Info.plist"; sourceTree = "<group>"; };
 		F4FFD30E153BF3E800759785 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F4FFD310153BF3E800759785 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F4FFD312153BF3E800759785 /* SimpleTable-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleTable-Prefix.pch"; sourceTree = "<group>"; };
+		F4FFD312153BF3E800759785 /* Mind & Wellness-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mind & Wellness-Prefix.pch"; sourceTree = "<group>"; };
 		F4FFD313153BF3E800759785 /* SimpleTableAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleTableAppDelegate.h; sourceTree = "<group>"; };
 		F4FFD314153BF3E800759785 /* SimpleTableAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleTableAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,7 +134,7 @@
 		F4FFD301153BF3E800759785 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F4FFD300153BF3E800759785 /* SimpleTable.app */,
+				F4FFD300153BF3E800759785 /* Mind & Wellness.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,10 +179,10 @@
 		F4FFD30B153BF3E800759785 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F4FFD30C153BF3E800759785 /* SimpleTable-Info.plist */,
+				F4FFD30C153BF3E800759785 /* Mind & Wellness-Info.plist */,
 				F4FFD30D153BF3E800759785 /* InfoPlist.strings */,
 				F4FFD310153BF3E800759785 /* main.m */,
-				F4FFD312153BF3E800759785 /* SimpleTable-Prefix.pch */,
+				F4FFD312153BF3E800759785 /* Mind & Wellness-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -190,9 +190,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F4FFD2FF153BF3E800759785 /* SimpleTable */ = {
+		F4FFD2FF153BF3E800759785 /* Mind & Wellness */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4FFD31E153BF3E900759785 /* Build configuration list for PBXNativeTarget "SimpleTable" */;
+			buildConfigurationList = F4FFD31E153BF3E900759785 /* Build configuration list for PBXNativeTarget "Mind & Wellness" */;
 			buildPhases = (
 				368C217C7FF92E005CE2E127 /* Check Pods Manifest.lock */,
 				F4FFD2FC153BF3E800759785 /* Sources */,
@@ -205,9 +205,9 @@
 			);
 			dependencies = (
 			);
-			name = SimpleTable;
+			name = "Mind & Wellness";
 			productName = SimpleTable;
-			productReference = F4FFD300153BF3E800759785 /* SimpleTable.app */;
+			productReference = F4FFD300153BF3E800759785 /* Mind & Wellness.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -219,7 +219,7 @@
 				CLASSPREFIX = SimpleTable;
 				LastUpgradeCheck = 0430;
 			};
-			buildConfigurationList = F4FFD2FA153BF3E800759785 /* Build configuration list for PBXProject "SimpleTable" */;
+			buildConfigurationList = F4FFD2FA153BF3E800759785 /* Build configuration list for PBXProject "Mind & Wellness" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -231,7 +231,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F4FFD2FF153BF3E800759785 /* SimpleTable */,
+				F4FFD2FF153BF3E800759785 /* Mind & Wellness */,
 			);
 		};
 /* End PBXProject section */
@@ -386,11 +386,11 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SimpleTable/SimpleTable-Prefix.pch";
-				INFOPLIST_FILE = "SimpleTable/SimpleTable-Info.plist";
+				GCC_PREFIX_HEADER = "SimpleTable/Mind & Wellness-Prefix.pch";
+				INFOPLIST_FILE = "SimpleTable/Mind & Wellness-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mind & Wellness";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -403,10 +403,10 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SimpleTable/SimpleTable-Prefix.pch";
-				INFOPLIST_FILE = "SimpleTable/SimpleTable-Info.plist";
+				GCC_PREFIX_HEADER = "SimpleTable/Mind & Wellness-Prefix.pch";
+				INFOPLIST_FILE = "SimpleTable/Mind & Wellness-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mind & Wellness";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -415,7 +415,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F4FFD2FA153BF3E800759785 /* Build configuration list for PBXProject "SimpleTable" */ = {
+		F4FFD2FA153BF3E800759785 /* Build configuration list for PBXProject "Mind & Wellness" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4FFD31C153BF3E900759785 /* Debug */,
@@ -424,7 +424,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4FFD31E153BF3E900759785 /* Build configuration list for PBXNativeTarget "SimpleTable" */ = {
+		F4FFD31E153BF3E900759785 /* Build configuration list for PBXNativeTarget "Mind & Wellness" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4FFD31F153BF3E900759785 /* Debug */,

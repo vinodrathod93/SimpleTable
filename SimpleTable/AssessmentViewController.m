@@ -7,6 +7,7 @@
 //
 
 #import "AssessmentViewController.h"
+#import "RadioButtonCell.h"
 #import <TNRadioButtonGroup/TNRadioButtonGroup.h>
 #import <CoreText/CoreText.h>
 
@@ -76,11 +77,11 @@
     }
     else {
         
-        cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:radioButtonCellIdentifier];
+        cell = (RadioButtonCell *)[tableView dequeueReusableCellWithIdentifier:radioButtonCellIdentifier];
         
         NSArray *question_options = options[indexPath.row];
         if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:radioButtonCellIdentifier];
+            cell = [[RadioButtonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:radioButtonCellIdentifier];
         }
         [self configureRadioButtonCell:cell forIndexPath:indexPath withQuestionOptions:question_options];
         
@@ -127,7 +128,7 @@
 }
 
 
--(void)configureRadioButtonCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath withQuestionOptions:(NSArray *)question_options {
+-(void)configureRadioButtonCell:(RadioButtonCell *)cell forIndexPath:(NSIndexPath *)indexPath withQuestionOptions:(NSArray *)question_options {
     
     cell.backgroundColor = [UIColor clearColor];
     
@@ -135,13 +136,11 @@
     
     CGFloat height = [self findHeightForText:questions[indexPath.row] havingWidth:self.tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Medium" size:15.f]].height;
     
-    UILabel *question = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, self.tableView.frame.size.width - 8, height)];
-    question.font = [UIFont fontWithName:@"AvenirNext-Medium" size:15.f];
-    question.textColor = [self darkerColorForColor:self.navBarColor];
-    question.numberOfLines = 0;
-    question.text       = questions[indexPath.row];
+//    UILabel *question = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, self.tableView.frame.size.width - 8, height)];
     
-    [cell.contentView addSubview:question];
+    cell.question.frame = CGRectMake(8, 8, self.tableView.frame.size.width - 8, height);
+    cell.question.textColor = [self darkerColorForColor:self.navBarColor];
+    cell.question.text       = questions[indexPath.row];
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
     
@@ -160,12 +159,12 @@
         [array addObject:button];
     }];
     
-    TNRadioButtonGroup *group = [[TNRadioButtonGroup alloc] initWithRadioButtonData:array layout:TNRadioButtonGroupLayoutVertical];
-    group.identifier = @"Sex group";
-    [group create];
-    group.position = CGPointMake(10, 8+height+8);
-//    group
-    [cell.contentView addSubview:group];
+//    TNRadioButtonGroup *group = [[TNRadioButtonGroup alloc] initWithRadioButtonData:array layout:TNRadioButtonGroupLayoutVertical];
+    cell.optionsGroup.radioButtonData = array;
+    cell.optionsGroup.layout           = TNRadioButtonGroupLayoutVertical;
+    cell.optionsGroup.identifier        = @"Options Group";
+    [cell.optionsGroup create];
+    cell.optionsGroup.position = CGPointMake(10, 8+height+8);
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
