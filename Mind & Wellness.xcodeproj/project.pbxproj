@@ -23,6 +23,10 @@
 		67E75E951C53F9D600B6A88A /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E75E941C53F9D600B6A88A /* CoreText.framework */; };
 		67E75E9E1C55593A00B6A88A /* AssessmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E75E9D1C55593A00B6A88A /* AssessmentViewController.m */; };
 		67E75EA11C5559A100B6A88A /* SliderAssessmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E75EA01C5559A100B6A88A /* SliderAssessmentTableViewCell.m */; };
+		829815E31C5E2BCC0080C586 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 829815DE1C5E2BCC0080C586 /* TPKeyboardAvoidingScrollView.m */; };
+		829815E41C5E2BCC0080C586 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 829815E01C5E2BCC0080C586 /* TPKeyboardAvoidingTableView.m */; };
+		829815E51C5E2BCC0080C586 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 829815E21C5E2BCC0080C586 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		829815E91C5E2EE10080C586 /* AskDoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 829815E81C5E2EE10080C586 /* AskDoctorViewController.m */; };
 		F1888275CBCD86E9579ED888 /* libPods-SimpleTable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A582C4504FC338CC38C066 /* libPods-SimpleTable.a */; };
 		F479E159155E3E99005C48B1 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = F479E158155E3E99005C48B1 /* data.plist */; };
 		F4FFD305153BF3E800759785 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FFD304153BF3E800759785 /* UIKit.framework */; };
@@ -62,6 +66,14 @@
 		67E75E9D1C55593A00B6A88A /* AssessmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssessmentViewController.m; sourceTree = "<group>"; };
 		67E75E9F1C5559A100B6A88A /* SliderAssessmentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderAssessmentTableViewCell.h; sourceTree = "<group>"; };
 		67E75EA01C5559A100B6A88A /* SliderAssessmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderAssessmentTableViewCell.m; sourceTree = "<group>"; };
+		829815DD1C5E2BCB0080C586 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		829815DE1C5E2BCC0080C586 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		829815DF1C5E2BCC0080C586 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		829815E01C5E2BCC0080C586 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		829815E11C5E2BCC0080C586 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		829815E21C5E2BCC0080C586 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		829815E71C5E2EE10080C586 /* AskDoctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskDoctorViewController.h; sourceTree = "<group>"; };
+		829815E81C5E2EE10080C586 /* AskDoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskDoctorViewController.m; sourceTree = "<group>"; };
 		E0A582C4504FC338CC38C066 /* libPods-SimpleTable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleTable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F479E158155E3E99005C48B1 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		F4FFD300153BF3E800759785 /* Mind & Wellness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mind & Wellness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +124,19 @@
 			name = "Custom TableViewCell";
 			sourceTree = "<group>";
 		};
+		829815E61C5E2BD60080C586 /* Keyboard Avoiding */ = {
+			isa = PBXGroup;
+			children = (
+				829815DD1C5E2BCB0080C586 /* TPKeyboardAvoidingScrollView.h */,
+				829815DE1C5E2BCC0080C586 /* TPKeyboardAvoidingScrollView.m */,
+				829815DF1C5E2BCC0080C586 /* TPKeyboardAvoidingTableView.h */,
+				829815E01C5E2BCC0080C586 /* TPKeyboardAvoidingTableView.m */,
+				829815E11C5E2BCC0080C586 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				829815E21C5E2BCC0080C586 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			name = "Keyboard Avoiding";
+			sourceTree = "<group>";
+		};
 		A4742AC8B52013FBE6DB6B7C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +180,7 @@
 		F4FFD30A153BF3E800759785 /* SimpleTable */ = {
 			isa = PBXGroup;
 			children = (
+				829815E61C5E2BD60080C586 /* Keyboard Avoiding */,
 				676481D91C4D6EAD00411EAD /* Custom TableViewCell */,
 				F4FFD313153BF3E800759785 /* SimpleTableAppDelegate.h */,
 				F4FFD314153BF3E800759785 /* SimpleTableAppDelegate.m */,
@@ -166,6 +192,8 @@
 				67E75E9D1C55593A00B6A88A /* AssessmentViewController.m */,
 				676481DA1C4D718F00411EAD /* DetailListViewController.h */,
 				676481DB1C4D718F00411EAD /* DetailListViewController.m */,
+				829815E71C5E2EE10080C586 /* AskDoctorViewController.h */,
+				829815E81C5E2EE10080C586 /* AskDoctorViewController.m */,
 				67E1A5381C46E1C900207685 /* MainStoryboard.storyboard */,
 				67330A0A1C4C181A007D8E75 /* Images.xcassets */,
 				F4FFD30B153BF3E800759785 /* Supporting Files */,
@@ -305,16 +333,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				829815E31C5E2BCC0080C586 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				67E75E9E1C55593A00B6A88A /* AssessmentViewController.m in Sources */,
 				67E1A53C1C46E2FA00207685 /* MSMainViewController.m in Sources */,
 				67E75EA11C5559A100B6A88A /* SliderAssessmentTableViewCell.m in Sources */,
+				829815E51C5E2BCC0080C586 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				671588B61C59713A00DCB804 /* RadioButtonCell.m in Sources */,
 				67E1A5451C46FCF700207685 /* SecondListTableViewController.m in Sources */,
 				F4FFD311153BF3E800759785 /* main.m in Sources */,
 				67BB5E321C515E7C00592D41 /* DetailTableViewCell.m in Sources */,
 				676481DC1C4D718F00411EAD /* DetailListViewController.m in Sources */,
+				829815E41C5E2BCC0080C586 /* TPKeyboardAvoidingTableView.m in Sources */,
 				67E1A5421C46F98700207685 /* AskDoctorTableViewCell.m in Sources */,
 				67E1A5481C46FED700207685 /* SecondTableViewCell.m in Sources */,
+				829815E91C5E2EE10080C586 /* AskDoctorViewController.m in Sources */,
 				F4FFD315153BF3E800759785 /* SimpleTableAppDelegate.m in Sources */,
 				67E1A53F1C46E51600207685 /* MSTableViewCell.m in Sources */,
 			);

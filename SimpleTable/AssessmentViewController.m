@@ -38,8 +38,9 @@
     CGImageRef reference = [context createCGImage:image fromRect:image.extent];
     
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageWithCGImage:reference scale:[[UIScreen mainScreen] scale] orientation:UIImageOrientationUp]];
-    [self.view addSubview:backgroundView];
-    [self.view sendSubviewToBack:backgroundView];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundView.image];
+//    [self.view addSubview:backgroundView];
+//    [self.view sendSubviewToBack:backgroundView];
 }
 
 - (void)didReceiveMemoryWarning {
