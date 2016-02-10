@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		307F31B5162154E9356F7ABA /* libPods-MindnWellness.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 310FCD5139A4873B9236019F /* libPods-MindnWellness.a */; };
+		671588B31C59707700DCB804 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 671588B21C59707700DCB804 /* data.json */; };
+		671588B61C59713A00DCB804 /* RadioButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 671588B51C59713A00DCB804 /* RadioButtonCell.m */; };
+		671E35681C6BA32900AF8736 /* BalloonAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671E35671C6BA32900AF8736 /* BalloonAnimateViewController.m */; };
+		671E356A1C6BD93B00AF8736 /* fly_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 671E35691C6BD93B00AF8736 /* fly_music.mp3 */; };
+		67330A0B1C4C181A007D8E75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67330A0A1C4C181A007D8E75 /* Images.xcassets */; };
+		67330A0D1C4C1CC8007D8E75 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67330A0C1C4C1CC7007D8E75 /* CoreImage.framework */; };
+		676481DC1C4D718F00411EAD /* DetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676481DB1C4D718F00411EAD /* DetailListViewController.m */; };
+		676880E11C623AC60058089F /* DoodleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676880E01C623AC60058089F /* DoodleViewController.m */; };
+		676880E41C6241EF0058089F /* SmoothLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 676880E21C6241EF0058089F /* SmoothLineView.m */; };
+		676880E71C624A8A0058089F /* ScratchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676880E61C624A8A0058089F /* ScratchViewController.m */; };
+		676880EA1C62A55C0058089F /* FactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676880E91C62A55C0058089F /* FactsTableViewController.m */; };
+		676880ED1C62A6E20058089F /* FactsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 676880EC1C62A6E20058089F /* FactsTableViewCell.m */; };
+		676880F01C6347010058089F /* ReplaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676880EF1C6347010058089F /* ReplaceViewController.m */; };
+		6784C6C61C615CB20053999E /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6784C6C51C615CB20053999E /* music.mp3 */; };
+		6784C6C91C615E1B0053999E /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6784C6C81C615E1B0053999E /* MusicViewController.m */; };
+		6784C6CB1C61E2250053999E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6784C6CA1C61E2250053999E /* AVFoundation.framework */; };
+		6784C6CD1C61E22F0053999E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6784C6CC1C61E22F0053999E /* AudioToolbox.framework */; };
+		6784C6D01C61E7780053999E /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6784C6CF1C61E7780053999E /* ArticlesViewController.m */; };
+		67B591591C639191004918E0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B591581C639191004918E0 /* MessageUI.framework */; };
+		67B5915C1C639C8B004918E0 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B5915B1C639C8B004918E0 /* RegisterViewController.m */; };
+		67B5915F1C63A350004918E0 /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B5915E1C63A350004918E0 /* NSString+Validation.m */; };
+		67BB5E321C515E7C00592D41 /* DetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BB5E311C515E7C00592D41 /* DetailTableViewCell.m */; };
+		67E1A5361C46DADA00207685 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E1A5351C46DADA00207685 /* Launch Screen.storyboard */; };
+		67E1A5391C46E1C900207685 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E1A5381C46E1C900207685 /* MainStoryboard.storyboard */; };
+		67E1A53C1C46E2FA00207685 /* MSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E1A53B1C46E2FA00207685 /* MSMainViewController.m */; };
+		67E1A53F1C46E51600207685 /* MSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E1A53E1C46E51600207685 /* MSTableViewCell.m */; };
+		67E1A5421C46F98700207685 /* AskDoctorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E1A5411C46F98700207685 /* AskDoctorTableViewCell.m */; };
+		67E1A5451C46FCF700207685 /* SecondListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E1A5441C46FCF700207685 /* SecondListTableViewController.m */; };
+		67E1A5481C46FED700207685 /* SecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E1A5471C46FED700207685 /* SecondTableViewCell.m */; };
+		67E75E951C53F9D600B6A88A /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E75E941C53F9D600B6A88A /* CoreText.framework */; };
+		67E75E9E1C55593A00B6A88A /* AssessmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E75E9D1C55593A00B6A88A /* AssessmentViewController.m */; };
+		67E75EA11C5559A100B6A88A /* SliderAssessmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E75EA01C5559A100B6A88A /* SliderAssessmentTableViewCell.m */; };
+		829815E31C5E2BCC0080C586 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 829815DE1C5E2BCC0080C586 /* TPKeyboardAvoidingScrollView.m */; };
+		829815E41C5E2BCC0080C586 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 829815E01C5E2BCC0080C586 /* TPKeyboardAvoidingTableView.m */; };
+		829815E51C5E2BCC0080C586 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 829815E21C5E2BCC0080C586 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		829815E91C5E2EE10080C586 /* AskDoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 829815E81C5E2EE10080C586 /* AskDoctorViewController.m */; };
+		F479E159155E3E99005C48B1 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = F479E158155E3E99005C48B1 /* data.plist */; };
+		F4FFD305153BF3E800759785 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FFD304153BF3E800759785 /* UIKit.framework */; };
+		F4FFD307153BF3E800759785 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FFD306153BF3E800759785 /* Foundation.framework */; };
+		F4FFD309153BF3E800759785 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FFD308153BF3E800759785 /* CoreGraphics.framework */; };
+		F4FFD30F153BF3E800759785 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4FFD30D153BF3E800759785 /* InfoPlist.strings */; };
+		F4FFD311153BF3E800759785 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFD310153BF3E800759785 /* main.m */; };
+		F4FFD315153BF3E800759785 /* SimpleTableAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FFD314153BF3E800759785 /* SimpleTableAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1863D699AD85A07125E28CC6 /* Pods-MindnWellness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindnWellness.release.xcconfig"; path = "Pods/Target Support Files/Pods-MindnWellness/Pods-MindnWellness.release.xcconfig"; sourceTree = "<group>"; };
+		310FCD5139A4873B9236019F /* libPods-MindnWellness.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MindnWellness.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		671588B21C59707700DCB804 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		671588B41C59713A00DCB804 /* RadioButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonCell.h; sourceTree = "<group>"; };
+		671588B51C59713A00DCB804 /* RadioButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonCell.m; sourceTree = "<group>"; };
+		671E35661C6BA32900AF8736 /* BalloonAnimateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalloonAnimateViewController.h; sourceTree = "<group>"; };
+		671E35671C6BA32900AF8736 /* BalloonAnimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalloonAnimateViewController.m; sourceTree = "<group>"; };
+		671E35691C6BD93B00AF8736 /* fly_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fly_music.mp3; sourceTree = "<group>"; };
+		67330A0A1C4C181A007D8E75 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		67330A0C1C4C1CC7007D8E75 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		676481DA1C4D718F00411EAD /* DetailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailListViewController.h; sourceTree = "<group>"; };
+		676481DB1C4D718F00411EAD /* DetailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailListViewController.m; sourceTree = "<group>"; };
+		676880DF1C623AC60058089F /* DoodleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoodleViewController.h; sourceTree = "<group>"; };
+		676880E01C623AC60058089F /* DoodleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoodleViewController.m; sourceTree = "<group>"; };
+		676880E21C6241EF0058089F /* SmoothLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmoothLineView.m; sourceTree = "<group>"; };
+		676880E31C6241EF0058089F /* SmoothLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmoothLineView.h; sourceTree = "<group>"; };
+		676880E51C624A8A0058089F /* ScratchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScratchViewController.h; sourceTree = "<group>"; };
+		676880E61C624A8A0058089F /* ScratchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScratchViewController.m; sourceTree = "<group>"; };
+		676880E81C62A55C0058089F /* FactsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FactsTableViewController.h; sourceTree = "<group>"; };
+		676880E91C62A55C0058089F /* FactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FactsTableViewController.m; sourceTree = "<group>"; };
+		676880EB1C62A6E20058089F /* FactsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FactsTableViewCell.h; sourceTree = "<group>"; };
+		676880EC1C62A6E20058089F /* FactsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FactsTableViewCell.m; sourceTree = "<group>"; };
+		676880EE1C6347010058089F /* ReplaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplaceViewController.h; sourceTree = "<group>"; };
+		676880EF1C6347010058089F /* ReplaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplaceViewController.m; sourceTree = "<group>"; };
+		6784C6C51C615CB20053999E /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
+		6784C6C71C615E1B0053999E /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
+		6784C6C81C615E1B0053999E /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
+		6784C6CA1C61E2250053999E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6784C6CC1C61E22F0053999E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6784C6CE1C61E7770053999E /* ArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesViewController.h; sourceTree = "<group>"; };
+		6784C6CF1C61E7780053999E /* ArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesViewController.m; sourceTree = "<group>"; };
+		67B591581C639191004918E0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		67B5915A1C639C8B004918E0 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		67B5915B1C639C8B004918E0 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		67B5915D1C63A350004918E0 /* NSString+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validation.h"; sourceTree = "<group>"; };
+		67B5915E1C63A350004918E0 /* NSString+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validation.m"; sourceTree = "<group>"; };
+		67BB5E301C515E7C00592D41 /* DetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewCell.h; sourceTree = "<group>"; };
+		67BB5E311C515E7C00592D41 /* DetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewCell.m; sourceTree = "<group>"; };
+		67E1A5351C46DADA00207685 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		67E1A5381C46E1C900207685 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		67E1A53A1C46E2FA00207685 /* MSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMainViewController.h; sourceTree = "<group>"; };
+		67E1A53B1C46E2FA00207685 /* MSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMainViewController.m; sourceTree = "<group>"; };
+		67E1A53D1C46E51600207685 /* MSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTableViewCell.h; sourceTree = "<group>"; };
+		67E1A53E1C46E51600207685 /* MSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTableViewCell.m; sourceTree = "<group>"; };
+		67E1A5401C46F98700207685 /* AskDoctorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskDoctorTableViewCell.h; sourceTree = "<group>"; };
+		67E1A5411C46F98700207685 /* AskDoctorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskDoctorTableViewCell.m; sourceTree = "<group>"; };
+		67E1A5431C46FCF700207685 /* SecondListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondListTableViewController.h; sourceTree = "<group>"; };
+		67E1A5441C46FCF700207685 /* SecondListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondListTableViewController.m; sourceTree = "<group>"; };
+		67E1A5461C46FED700207685 /* SecondTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTableViewCell.h; sourceTree = "<group>"; };
+		67E1A5471C46FED700207685 /* SecondTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTableViewCell.m; sourceTree = "<group>"; };
+		67E75E941C53F9D600B6A88A /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		67E75E9C1C55593A00B6A88A /* AssessmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssessmentViewController.h; sourceTree = "<group>"; };
+		67E75E9D1C55593A00B6A88A /* AssessmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssessmentViewController.m; sourceTree = "<group>"; };
+		67E75E9F1C5559A100B6A88A /* SliderAssessmentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderAssessmentTableViewCell.h; sourceTree = "<group>"; };
+		67E75EA01C5559A100B6A88A /* SliderAssessmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderAssessmentTableViewCell.m; sourceTree = "<group>"; };
+		829815DD1C5E2BCB0080C586 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		829815DE1C5E2BCC0080C586 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		829815DF1C5E2BCC0080C586 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		829815E01C5E2BCC0080C586 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		829815E11C5E2BCC0080C586 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		829815E21C5E2BCC0080C586 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		829815E71C5E2EE10080C586 /* AskDoctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskDoctorViewController.h; sourceTree = "<group>"; };
+		829815E81C5E2EE10080C586 /* AskDoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskDoctorViewController.m; sourceTree = "<group>"; };
+		8DA56FB6BC993B9775DA05BF /* Pods-MindnWellness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindnWellness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MindnWellness/Pods-MindnWellness.debug.xcconfig"; sourceTree = "<group>"; };
+		F479E158155E3E99005C48B1 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		F4FFD300153BF3E800759785 /* MindnWellness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindnWellness.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4FFD304153BF3E800759785 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F4FFD306153BF3E800759785 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F4FFD308153BF3E800759785 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F4FFD30C153BF3E800759785 /* MindnWellness-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MindnWellness-Info.plist"; sourceTree = "<group>"; };
+		F4FFD30E153BF3E800759785 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F4FFD310153BF3E800759785 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F4FFD312153BF3E800759785 /* MindnWellness-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MindnWellness-Prefix.pch"; sourceTree = "<group>"; };
+		F4FFD313153BF3E800759785 /* SimpleTableAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleTableAppDelegate.h; sourceTree = "<group>"; };
+		F4FFD314153BF3E800759785 /* SimpleTableAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleTableAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4FFD2FD153BF3E800759785 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67B591591C639191004918E0 /* MessageUI.framework in Frameworks */,
+				6784C6CD1C61E22F0053999E /* AudioToolbox.framework in Frameworks */,
+				6784C6CB1C61E2250053999E /* AVFoundation.framework in Frameworks */,
+				67E75E951C53F9D600B6A88A /* CoreText.framework in Frameworks */,
+				67330A0D1C4C1CC8007D8E75 /* CoreImage.framework in Frameworks */,
+				F4FFD305153BF3E800759785 /* UIKit.framework in Frameworks */,
+				F4FFD307153BF3E800759785 /* Foundation.framework in Frameworks */,
+				F4FFD309153BF3E800759785 /* CoreGraphics.framework in Frameworks */,
+				307F31B5162154E9356F7ABA /* libPods-MindnWellness.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A19960C78525C673FF49D22 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DA56FB6BC993B9775DA05BF /* Pods-MindnWellness.debug.xcconfig */,
+				1863D699AD85A07125E28CC6 /* Pods-MindnWellness.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		676481D91C4D6EAD00411EAD /* Custom TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				67E1A5461C46FED700207685 /* SecondTableViewCell.h */,
+				67E1A5471C46FED700207685 /* SecondTableViewCell.m */,
+				67E1A5401C46F98700207685 /* AskDoctorTableViewCell.h */,
+				67E1A5411C46F98700207685 /* AskDoctorTableViewCell.m */,
+				67E1A53D1C46E51600207685 /* MSTableViewCell.h */,
+				67E1A53E1C46E51600207685 /* MSTableViewCell.m */,
+				67BB5E301C515E7C00592D41 /* DetailTableViewCell.h */,
+				67BB5E311C515E7C00592D41 /* DetailTableViewCell.m */,
+				67E75E9F1C5559A100B6A88A /* SliderAssessmentTableViewCell.h */,
+				67E75EA01C5559A100B6A88A /* SliderAssessmentTableViewCell.m */,
+				671588B41C59713A00DCB804 /* RadioButtonCell.h */,
+				671588B51C59713A00DCB804 /* RadioButtonCell.m */,
+				676880EB1C62A6E20058089F /* FactsTableViewCell.h */,
+				676880EC1C62A6E20058089F /* FactsTableViewCell.m */,
+			);
+			name = "Custom TableViewCell";
+			sourceTree = "<group>";
+		};
+		829815E61C5E2BD60080C586 /* Keyboard Avoiding */ = {
+			isa = PBXGroup;
+			children = (
+				829815DD1C5E2BCB0080C586 /* TPKeyboardAvoidingScrollView.h */,
+				829815DE1C5E2BCC0080C586 /* TPKeyboardAvoidingScrollView.m */,
+				829815DF1C5E2BCC0080C586 /* TPKeyboardAvoidingTableView.h */,
+				829815E01C5E2BCC0080C586 /* TPKeyboardAvoidingTableView.m */,
+				829815E11C5E2BCC0080C586 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				829815E21C5E2BCC0080C586 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			name = "Keyboard Avoiding";
+			sourceTree = "<group>";
+		};
+		F4FFD2F5153BF3E800759785 = {
+			isa = PBXGroup;
+			children = (
+				F4FFD30A153BF3E800759785 /* SimpleTable */,
+				F4FFD303153BF3E800759785 /* Frameworks */,
+				F4FFD301153BF3E800759785 /* Products */,
+				2A19960C78525C673FF49D22 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		F4FFD301153BF3E800759785 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4FFD300153BF3E800759785 /* MindnWellness.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4FFD303153BF3E800759785 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67B591581C639191004918E0 /* MessageUI.framework */,
+				6784C6CC1C61E22F0053999E /* AudioToolbox.framework */,
+				6784C6CA1C61E2250053999E /* AVFoundation.framework */,
+				67E75E941C53F9D600B6A88A /* CoreText.framework */,
+				67330A0C1C4C1CC7007D8E75 /* CoreImage.framework */,
+				F4FFD304153BF3E800759785 /* UIKit.framework */,
+				F4FFD306153BF3E800759785 /* Foundation.framework */,
+				F4FFD308153BF3E800759785 /* CoreGraphics.framework */,
+				310FCD5139A4873B9236019F /* libPods-MindnWellness.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4FFD30A153BF3E800759785 /* SimpleTable */ = {
+			isa = PBXGroup;
+			children = (
+				676880E21C6241EF0058089F /* SmoothLineView.m */,
+				676880E31C6241EF0058089F /* SmoothLineView.h */,
+				829815E61C5E2BD60080C586 /* Keyboard Avoiding */,
+				676481D91C4D6EAD00411EAD /* Custom TableViewCell */,
+				F4FFD313153BF3E800759785 /* SimpleTableAppDelegate.h */,
+				F4FFD314153BF3E800759785 /* SimpleTableAppDelegate.m */,
+				67E1A53A1C46E2FA00207685 /* MSMainViewController.h */,
+				67E1A53B1C46E2FA00207685 /* MSMainViewController.m */,
+				67E1A5431C46FCF700207685 /* SecondListTableViewController.h */,
+				67E1A5441C46FCF700207685 /* SecondListTableViewController.m */,
+				67E75E9C1C55593A00B6A88A /* AssessmentViewController.h */,
+				67E75E9D1C55593A00B6A88A /* AssessmentViewController.m */,
+				67B5915D1C63A350004918E0 /* NSString+Validation.h */,
+				67B5915E1C63A350004918E0 /* NSString+Validation.m */,
+				67B5915A1C639C8B004918E0 /* RegisterViewController.h */,
+				67B5915B1C639C8B004918E0 /* RegisterViewController.m */,
+				676481DA1C4D718F00411EAD /* DetailListViewController.h */,
+				676481DB1C4D718F00411EAD /* DetailListViewController.m */,
+				6784C6C71C615E1B0053999E /* MusicViewController.h */,
+				6784C6C81C615E1B0053999E /* MusicViewController.m */,
+				829815E71C5E2EE10080C586 /* AskDoctorViewController.h */,
+				829815E81C5E2EE10080C586 /* AskDoctorViewController.m */,
+				6784C6CE1C61E7770053999E /* ArticlesViewController.h */,
+				6784C6CF1C61E7780053999E /* ArticlesViewController.m */,
+				676880DF1C623AC60058089F /* DoodleViewController.h */,
+				676880E01C623AC60058089F /* DoodleViewController.m */,
+				676880E51C624A8A0058089F /* ScratchViewController.h */,
+				676880E61C624A8A0058089F /* ScratchViewController.m */,
+				676880E81C62A55C0058089F /* FactsTableViewController.h */,
+				676880E91C62A55C0058089F /* FactsTableViewController.m */,
+				676880EE1C6347010058089F /* ReplaceViewController.h */,
+				676880EF1C6347010058089F /* ReplaceViewController.m */,
+				671E35661C6BA32900AF8736 /* BalloonAnimateViewController.h */,
+				671E35671C6BA32900AF8736 /* BalloonAnimateViewController.m */,
+				67E1A5381C46E1C900207685 /* MainStoryboard.storyboard */,
+				67330A0A1C4C181A007D8E75 /* Images.xcassets */,
+				F4FFD30B153BF3E800759785 /* Supporting Files */,
+				F479E158155E3E99005C48B1 /* data.plist */,
+				671588B21C59707700DCB804 /* data.json */,
+				671E35691C6BD93B00AF8736 /* fly_music.mp3 */,
+				6784C6C51C615CB20053999E /* music.mp3 */,
+				67E1A5351C46DADA00207685 /* Launch Screen.storyboard */,
+			);
+			path = SimpleTable;
+			sourceTree = "<group>";
+		};
+		F4FFD30B153BF3E800759785 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F4FFD30C153BF3E800759785 /* MindnWellness-Info.plist */,
+				F4FFD30D153BF3E800759785 /* InfoPlist.strings */,
+				F4FFD310153BF3E800759785 /* main.m */,
+				F4FFD312153BF3E800759785 /* MindnWellness-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4FFD2FF153BF3E800759785 /* MindnWellness */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4FFD31E153BF3E900759785 /* Build configuration list for PBXNativeTarget "MindnWellness" */;
+			buildPhases = (
+				28BEBDB380C5607FA786EFB7 /* Check Pods Manifest.lock */,
+				F4FFD2FC153BF3E800759785 /* Sources */,
+				F4FFD2FD153BF3E800759785 /* Frameworks */,
+				F4FFD2FE153BF3E800759785 /* Resources */,
+				2601764C4C801121FB93408D /* Embed Pods Frameworks */,
+				183F8E77CC3C97E98A4F5846 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MindnWellness;
+			productName = SimpleTable;
+			productReference = F4FFD300153BF3E800759785 /* MindnWellness.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4FFD2F7153BF3E800759785 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SimpleTable;
+				LastUpgradeCheck = 0710;
+				TargetAttributes = {
+					F4FFD2FF153BF3E800759785 = {
+						DevelopmentTeam = KMK576W42B;
+					};
+				};
+			};
+			buildConfigurationList = F4FFD2FA153BF3E800759785 /* Build configuration list for PBXProject "MindnWellness" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F4FFD2F5153BF3E800759785;
+			productRefGroup = F4FFD301153BF3E800759785 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4FFD2FF153BF3E800759785 /* MindnWellness */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4FFD2FE153BF3E800759785 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4FFD30F153BF3E800759785 /* InfoPlist.strings in Resources */,
+				671588B31C59707700DCB804 /* data.json in Resources */,
+				67E1A5391C46E1C900207685 /* MainStoryboard.storyboard in Resources */,
+				67330A0B1C4C181A007D8E75 /* Images.xcassets in Resources */,
+				F479E159155E3E99005C48B1 /* data.plist in Resources */,
+				6784C6C61C615CB20053999E /* music.mp3 in Resources */,
+				671E356A1C6BD93B00AF8736 /* fly_music.mp3 in Resources */,
+				67E1A5361C46DADA00207685 /* Launch Screen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		183F8E77CC3C97E98A4F5846 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindnWellness/Pods-MindnWellness-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2601764C4C801121FB93408D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindnWellness/Pods-MindnWellness-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		28BEBDB380C5607FA786EFB7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4FFD2FC153BF3E800759785 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				676880E41C6241EF0058089F /* SmoothLineView.m in Sources */,
+				676880E11C623AC60058089F /* DoodleViewController.m in Sources */,
+				829815E31C5E2BCC0080C586 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				671E35681C6BA32900AF8736 /* BalloonAnimateViewController.m in Sources */,
+				6784C6D01C61E7780053999E /* ArticlesViewController.m in Sources */,
+				67E75E9E1C55593A00B6A88A /* AssessmentViewController.m in Sources */,
+				676880F01C6347010058089F /* ReplaceViewController.m in Sources */,
+				67E1A53C1C46E2FA00207685 /* MSMainViewController.m in Sources */,
+				676880E71C624A8A0058089F /* ScratchViewController.m in Sources */,
+				67E75EA11C5559A100B6A88A /* SliderAssessmentTableViewCell.m in Sources */,
+				829815E51C5E2BCC0080C586 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				671588B61C59713A00DCB804 /* RadioButtonCell.m in Sources */,
+				67E1A5451C46FCF700207685 /* SecondListTableViewController.m in Sources */,
+				676880ED1C62A6E20058089F /* FactsTableViewCell.m in Sources */,
+				F4FFD311153BF3E800759785 /* main.m in Sources */,
+				67BB5E321C515E7C00592D41 /* DetailTableViewCell.m in Sources */,
+				67B5915C1C639C8B004918E0 /* RegisterViewController.m in Sources */,
+				676481DC1C4D718F00411EAD /* DetailListViewController.m in Sources */,
+				829815E41C5E2BCC0080C586 /* TPKeyboardAvoidingTableView.m in Sources */,
+				67E1A5421C46F98700207685 /* AskDoctorTableViewCell.m in Sources */,
+				67E1A5481C46FED700207685 /* SecondTableViewCell.m in Sources */,
+				6784C6C91C615E1B0053999E /* MusicViewController.m in Sources */,
+				829815E91C5E2EE10080C586 /* AskDoctorViewController.m in Sources */,
+				F4FFD315153BF3E800759785 /* SimpleTableAppDelegate.m in Sources */,
+				67E1A53F1C46E51600207685 /* MSTableViewCell.m in Sources */,
+				67B5915F1C63A350004918E0 /* NSString+Validation.m in Sources */,
+				676880EA1C62A55C0058089F /* FactsTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F4FFD30D153BF3E800759785 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4FFD30E153BF3E800759785 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4FFD31C153BF3E900759785 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: kanhaiya gupta (9N8EZY2E2N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F4FFD31D153BF3E900759785 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: kanhaiya gupta (9N8EZY2E2N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4FFD31F153BF3E900759785 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DA56FB6BC993B9775DA05BF /* Pods-MindnWellness.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: kanhaiya gupta (9N8EZY2E2N)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleTable/MindnWellness-Prefix.pch";
+				INFOPLIST_FILE = "SimpleTable/MindnWellness-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = MindnWellness;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F4FFD320153BF3E900759785 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1863D699AD85A07125E28CC6 /* Pods-MindnWellness.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: kanhaiya gupta (9N8EZY2E2N)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleTable/MindnWellness-Prefix.pch";
+				INFOPLIST_FILE = "SimpleTable/MindnWellness-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = MindnWellness;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4FFD2FA153BF3E800759785 /* Build configuration list for PBXProject "MindnWellness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4FFD31C153BF3E900759785 /* Debug */,
+				F4FFD31D153BF3E900759785 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4FFD31E153BF3E900759785 /* Build configuration list for PBXNativeTarget "MindnWellness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4FFD31F153BF3E900759785 /* Debug */,
+				F4FFD320153BF3E900759785 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4FFD2F7153BF3E800759785 /* Project object */;
+}

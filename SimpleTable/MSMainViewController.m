@@ -11,6 +11,8 @@
 #import "AskDoctorTableViewCell.h"
 #import "SecondListTableViewController.h"
 #import "AskDoctorViewController.h"
+#import "MusicViewController.h"
+#import "RegisterViewController.h"
 
 @interface MSMainViewController ()
 
@@ -34,7 +36,28 @@
     // Navigation Title
     self.title = @"Stress Therapy";
     
-    //
+    
+    
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    
+    if ([user valueForKey:@"user"] == nil) {
+        RegisterViewController *registerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"registerVC"];
+        
+        UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:registerVC];
+        navigation.navigationBar.tintColor = [UIColor colorWithRed:32/255.f green:150/255.f blue:243/255.f alpha:1.0];
+        
+        
+        [self presentViewController:navigation animated:YES completion:nil];
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     _labels = [NSMutableArray arrayWithObjects:@"Did you know", @"Myths & Facts", @"Assesments", @"Find a Solution", @"Stress Busters", @"Articles", @"Music", nil];
     _icons  = @[ @"l1", @"l2", @"l3", @"l4", @"l3", @"l2", @"l1" ];
     _backgrounds = @[ @"didyouknow.png", @"mythsandfacts.png", @"as.png", @"findasolution.png", @"stressbusters.png", @"as1.png", @"music.png"];
@@ -68,6 +91,8 @@
     
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:32/255.f green:150/255.f blue:243/255.f alpha:1.0]];
 }
+
+
 
 #pragma mark - Table view data source
 
@@ -113,7 +138,12 @@
     cell.iconView.image = [UIImage imageNamed:_icons[indexPath.row]];
     cell.iconView.layer.cornerRadius = cell.iconView.frame.size.height/2.f;
     cell.iconView.layer.masksToBounds = YES;
-    cell.indentationWidth = 40;
+    
+    if (self.view.frame.size.width <= 320) {
+        cell.indentationWidth = 30;
+    }
+    else
+        cell.indentationWidth = 40;
 }
 
 
@@ -158,7 +188,7 @@
         
     }
     else
-        return nil;
+        return 0;
     
     
 }
@@ -169,29 +199,43 @@
     
     if (indexPath.section == 0) {
         
-        SecondListTableViewController *secondTableVC = [self.storyboard instantiateViewControllerWithIdentifier:@"secondListTableVC"];
-        
-        secondTableVC.title     = _labels[indexPath.row];
-        secondTableVC.bg_image  = _backgrounds[indexPath.row];
-        secondTableVC.data      = _allData[indexPath.row];
-        secondTableVC.jsonKey   = _jsonKeys[indexPath.row];
-        secondTableVC.mainIndex = indexPath.row;
-        
-        if (indexPath.row == 0 || indexPath.row == 2) {
-            secondTableVC.navBarcolor = [UIColor colorWithRed:32/255.f green:150/255.f blue:243/255.f alpha:1.0];
+        if (indexPath.row == 6) {
+            MusicViewController *musicVC = [self.storyboard instantiateViewControllerWithIdentifier:@"musicVC"];
+            musicVC.title = _labels[indexPath.row];
+            musicVC.bg_image = _backgrounds[indexPath.row];
+            musicVC.navBarcolor = [UIColor colorWithRed:253/255.f green:216/255.f blue:53/255.f alpha:1.0];
+            [self.navigationController pushViewController:musicVC animated:YES];
+        }
+        else {
+            
+            SecondListTableViewController *secondTableVC = [self.storyboard instantiateViewControllerWithIdentifier:@"secondListTableVC"];
+            
+            secondTableVC.title     = _labels[indexPath.row];
+            secondTableVC.bg_image  = _backgrounds[indexPath.row];
+            secondTableVC.data      = _allData[indexPath.row];
+            secondTableVC.jsonKey   = _jsonKeys[indexPath.row];
+            secondTableVC.mainIndex = indexPath.row;
+            
+            if (indexPath.row == 0 || indexPath.row == 2) {
+                secondTableVC.navBarcolor = [UIColor colorWithRed:32/255.f green:150/255.f blue:243/255.f alpha:1.0];
+                
+                
+            }
+            else if (indexPath.row == 1 || indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 6) {
+                secondTableVC.navBarcolor = [UIColor colorWithRed:253/255.f green:216/255.f blue:53/255.f alpha:1.0];
+            }
+            else if (indexPath.row == 5) {
+                secondTableVC.navBarcolor = [UIColor colorWithRed:255/255.f green:135/255.f blue:195/255.f alpha:1.0];
+            }
+            
+            
+            
+            [self.navigationController pushViewController:secondTableVC animated:YES];
             
             
         }
-        else if (indexPath.row == 1 || indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 6) {
-            secondTableVC.navBarcolor = [UIColor colorWithRed:253/255.f green:216/255.f blue:53/255.f alpha:1.0];
-        }
-        else if (indexPath.row == 5) {
-            secondTableVC.navBarcolor = [UIColor colorWithRed:255/255.f green:135/255.f blue:195/255.f alpha:1.0];
-        }
         
         
-        
-        [self.navigationController pushViewController:secondTableVC animated:YES];
     }
     else {
         

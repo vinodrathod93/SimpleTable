@@ -7,10 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TNRadioButtonGroup/TNRadioButtonGroup.h>
+
+@class RadioButtonCell;
+
+@protocol RadioButtonCellDelegate <NSObject>
+
+-(void)radioButtonCellDidSelect:(RadioButtonCell *)selectedCell;
+
+@end
 
 @interface RadioButtonCell : UITableViewCell
 
-@property (nonatomic, strong) TNRadioButtonGroup *optionsGroup;
-@property (nonatomic, strong) UILabel *question;
+@property (nonatomic, strong) UIButton *radioButton;
+
+@property (nonatomic, weak) id <RadioButtonCellDelegate> delegate;
+-(void)deselectRadioButton;
+-(void)selectRadioButton;
+
 @end

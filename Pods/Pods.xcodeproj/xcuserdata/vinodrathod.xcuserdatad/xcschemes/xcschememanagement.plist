@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-SimpleTable.xcscheme</key>
+		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>TNRadioButtonGroup.xcscheme</key>
+		<key>Pods-MindnWellness.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>739E42BB6DA467BAA849B85050CF2827</key>
+		<key>A9C0594AA99D2AFA9574989A4FB57FAC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F0FA7ACAB33DD7B753893F448B502299</key>
+		<key>FE2F1D7B9D9FCEA148517E4657B243F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

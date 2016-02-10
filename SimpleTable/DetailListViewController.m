@@ -8,20 +8,22 @@
 
 #import "DetailListViewController.h"
 #import "DetailTableViewCell.h"
+#import "FactsTableViewController.h"
 #import <CoreText/CoreText.h>
 
 @interface DetailListViewController ()
 
-
-
-
 @end
 
-@implementation DetailListViewController
+@implementation DetailListViewController {
+    NSInteger _cellSection;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:32/255.f green:150/255.f blue:243/255.f alpha:1.0]];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     CIImage *image = [[CIImage alloc] initWithImage:[UIImage imageNamed:self.bg_image]];
     CIContext *context = [CIContext contextWithOptions:nil];
@@ -48,7 +50,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCellIdentifier" forIndexPath:indexPath];
+    cell.tag = indexPath.section;
     
+    UITapGestureRecognizer *textViewTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoFactsVC:)];
+//    textViewTapRecognizer.
     
     NSString *string = self.detailsArray[indexPath.section];
     
@@ -57,6 +62,7 @@
     cell.roundedView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.8f];
     cell.roundedView.layer.cornerRadius = 10.f;
     cell.textView.backgroundColor = [UIColor clearColor];
+    [cell.textView addGestureRecognizer:textViewTapRecognizer];
     
     UIColor *textColor              = [UIColor colorWithRed:34/255.f green:167/255.f blue:240/255.f alpha:1.0];
     
@@ -79,6 +85,10 @@
         cell.textView.attributedText = attributedString;
 
     }
+    else if (self.main_index == 3) {
+        cell.textView.textAlignment = NSTextAlignmentCenter;
+        cell.textView.attributedText = [self attributedHeaderStringForSection:indexPath.section];
+    }
     else {
         cell.textView.textAlignment = NSTextAlignmentCenter;
         cell.textView.text  = string;
@@ -86,12 +96,29 @@
     
     
     
-    
-    
-    
-    
     return cell;
 }
+
+
+
+
+-(void)gotoFactsVC:(UITapGestureRecognizer *)sender {
+    
+    
+    if (self.main_index == 1) {
+        DetailTableViewCell *cell = (DetailTableViewCell *)[[[[sender view] superview] superview] superview];
+        
+        FactsTableViewController *factsDetails = [self.storyboard instantiateViewControllerWithIdentifier:@"factsTableVC"];
+        factsDetails.bg_image = self.bg_image;
+        factsDetails.index = cell.tag;
+        factsDetails.factDetails = [self getFactsDataArray][cell.tag];
+        [self.navigationController pushViewController:factsDetails animated:YES];
+    }
+    
+
+}
+
+
 
 
 
@@ -165,6 +192,54 @@
     return nil;
 }
 
+
+-(NSMutableAttributedString *)attributedHeaderStringForSection:(NSInteger)section {
+    
+    NSString *string = self.detailsArray[section];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string attributes:@{
+                                                                                                                        NSFontAttributeName : [UIFont fontWithName:@"AvenirNext-Medium" size:16.f]
+                                                                                                                        }];
+    
+    
+    
+    
+    UIColor *textColor              = [UIColor colorWithRed:34/255.f green:167/255.f blue:240/255.f alpha:1.0];
+    
+    NSArray *array = [string componentsSeparatedByString:@"\n\n"];
+    //    NSLog(@"%@", array);
+    
+    
+    for (int i=0; i<3; i++) {
+        NSRange range = [string rangeOfString:array[i]];
+        
+        if (i == 0 || i ==2) {
+            [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"AvenirNext-Bold" size:15.f] range:range];
+            
+        }
+        
+        NSMutableParagraphStyle *paragraphStyle = NSMutableParagraphStyle.new;
+        paragraphStyle.alignment                = NSTextAlignmentCenter;
+        [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, string.length)];
+        [attributedString addAttribute:NSForegroundColorAttributeName value:[self darkerColorForColor:textColor] range:NSMakeRange(0, string.length)];
+        
+        
+    }
+    
+    
+    return attributedString;
+}
+
+
+-(NSArray *)getFactsDataArray {
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];
+    NSData *root = [NSData dataWithContentsOfFile:jsonPath];
+    
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:root options:NSJSONReadingMutableLeaves error:nil];
+    
+    NSArray *data = dict[@"stress"][_second_index];
+    
+    return data;
+}
 
 
 @end

@@ -74,7 +74,18 @@
                                  "3. I am satisfied with my life.",
                                  "4. So far, I have gotten the important things I want in life.",
                                  "5. If I could live my life over, I would change almost nothing."
-                                 ]
+                                 ],
+                   "max": 7,
+                   "results": [
+                               "Your scores indicate that you are Extremely dissatisfied with your life. It is strongly recommended that you must visit a counsellor, who will help you out through this tough phase of yours",
+                               "Your scores indicate that you are Dissatisfied with your life. It is recommended that you visit a mental health professional or a counsellor, and restore your life’s happiness",
+                               "Your scores indicate that you are Dissatisfied with your life. It is recommended that you visit a mental health professional or a counsellor, and restore your life’s happiness",
+                               "Your scores indicate that you are Slightly dissatisfied with your life. It will be a good idea to speak to a friend or a professional, if any thing is troubling you",
+                               "Your Scores Indicate that you are Neutral, that is neither satisfied nor dissatisfied with your life! It is recommended that you seek and perform activities which make you happy",
+                               "Your scores indicate that you are Slightly satisfied with your life! Consider focussing more on healthy activities in a day! It will also be a good idea to be around more happy people",
+                               "Your scores indicate that you are Satisfied with your life, however there still exists scope for improvement! While you are doing very well, consider changing your daily routines slightly to increase your satisfaction levels",
+                               "Your Scores indicate that you are Extremely satisfied with your life, keep up the good work and continue doing your daily activities just as you are doing now!"
+                               ]
                    },
                    {
                    "header": "Are you satisfied with your Marriage? \n\n Instructions \n\n Indicate your level of satisfaction, with 0 meaning no satisfaction, 5 meaning average satisfaction and 10 meaning highest satisfaction. There is no right or wrong answer. \n\n",
@@ -99,7 +110,16 @@
                                  "18. How we manage money",
                                  "19. My spouse’s relationship with my relatives",
                                  "20. My relationship with my spouse’s relatives"
-                                 ]
+                                 ],
+                   "max": 10,
+                   "results": [
+                               "Answer all Questions To Generate Proper Results",
+                               "Your scores indicate that your relationship may not be at the best stages at this point and thus, major assistance from a professional relationship therapist is needed as soon as possible.",
+                               "Your scores indicate that Definite improvement needed. Consider seeking help from a Relationship Psychologist.",
+                               "Your scores indicate that You have equal number of strengths and weaknesses. Your relationship is at a good stage and may benefit with little consistent efforts.",
+                               "Your scores indicate that Your relationship has some major strengths. While the strengths overpower the weaknesses, try and make an effort towards identifying and working on your weaknesses",
+                               "Your scores indicate that Your relationship is doing very well. Keep up the good work!"
+                               ]
                    },
                    {
                    "header": "Instructions \n\n Choose what option describes you best. There is no right or wrong answer. \n\n",
@@ -174,6 +194,12 @@
                                 "Yes, but not in the last year",
                                 "Yes, during the last year"
                                 ]
+                               ],
+                   "results": [
+                               "Your scores indicate that Your alcohol intake is healthy.",
+                               "Your scores indicate that your alcohol intake level is slightly higher than normal and You may need to reduce your alcohol intake.",
+                               "Your scores indicate that your alcohol intake is high and you may need brief counseling and continued monitoring.",
+                               "Your scores indicate that your alcohol intake is very high and may have started impacting various spheres of your life such as work, family, relationships etc., however you may require a further diagnostic evaluation."
                                ]
                    },
                    {
@@ -237,6 +263,12 @@
                                 "Dissatisfied",
                                 "Very Much Interfering"
                                 ]
+                               ],
+                   "results": [
+                               "Your scores indicate that you do not have clinically significant insomnia.",
+                               "Your scores indicate that you have Sub threshold insomnia, that is there may be times you have a difficulty with your sleep, however it is within the manageable limits. Some of the probable reasons could be stress, tiredness, worry, excitement etc. ",
+                               "Your scores indicate that you have Clinical insomnia (moderate severity). Consider seeking professional help from a Psychologist",
+                               "Your scores indicate that you have Severe Clinical insomnia, which needs medical attention immediately. Consider seeking help from a psychologist who can guide you further in terms of the next steps."
                                ]
                    },
                    {
@@ -256,7 +288,13 @@
                                  "12. In the last month, how often have you found yourself thinking about things that you have to accomplish?",
                                  "13. In the last month, how often have you been able to control the way you spend your time?",
                                  "14. In the last month, how often have you felt difficulties were piling up so high that you could not overcome them?"
-                                 ]
+                                 ],
+                   "max": 3,
+                   "results": [
+                               "Your scores indicate thatyou have LOW STRESS levels. Keep up the good work and keep following your current stress management techniques consistently, to ensure continued healthy results",
+                               "Your scores indicate that, your stress levels are of Moderate intensity and you may need some to begin doing or increase your stress management activities such as yoga, exercise, relaxation etc. Consider seeking professional help for tips on managing your stress levels better",
+                               "Your scores indicate that you have HIGH STRESS levels. It is strongly recommended that you seek professional help froma a psychologist inorder to manage your stress better. "
+                               ]
                    },
                    {
                    "header": "Do you think you have low self esteem? \n\n Instructions \n\n Please indicate your response. There is no right or wrong answer. \nStrongly disagree = 0, \nDisagree = 1, \nAgree = 2, \nStrongly agree  = 3 \n\n",
@@ -265,8 +303,19 @@
                                  "2. I feel that I have a number of good qualities.",
                                  "3. All in all, I am inclined to feel that I am a failure.",
                                  "4. I am able to do things as well as most other people.",
-                                 "5. I feel I do not have much to be proud of.","6. I take a positive attitude toward myself.","7. On the whole, I am satisfied with myself.","8. I wish I could have more respect for myself.","9. I certainly feel useless at times.","10. At times I think I am no good at all."
-                                 ]
+                                 "5. I feel I do not have much to be proud of.",
+                                 "6. I take a positive attitude toward myself.",
+                                 "7. On the whole, I am satisfied with myself.",
+                                 "8. I wish I could have more respect for myself.",
+                                 "9. I certainly feel useless at times.",
+                                 "10. At times I think I am no good at all."
+                                 ],
+                   "max": 3,
+                   "results": [
+                               "Your scores suggest that you have low self-esteem, and hence it is recommended that you should visit a counselor in order to understand yourself in a better light.",
+                               "Your scores indicate that are within normal range; that is neither do you have a high self-esteem nor low. Your self-esteem is more situational and varies across different situations. ",
+                               "Your scores indicate that you have a high self- esteem. Congratulations and keep up the good work! Its always good to love oneself."
+                               ]
                    },
                    {
                    "header": "Is Fatigue taking over your Life? \n\n Instructions \n\n The Fatigue Severity Scale (FSS) is a method of evaluating the impact of fatigue on you. Read each statement and circle a number from 1 to 7, based on how accurately it reflects your condition during the past week and the extent to which you agree or disagree that the statement applies to you. There is no right or wrong answer. \n\n During the past week, I have found that",
@@ -275,86 +324,389 @@
                                  "2. Exercise brings on my fatigue.",
                                  "3. I am easily fatigued.",
                                  "4. Fatigue interferes with my physical functioning.",
-                                 "5. If I could live my life over, I would change almost nothing.","6. My fatigue prevents sustained physical functioning."," 7. Fatigue interferes with carrying out certain duties and responsibilities."," 8. Fatigue is among my three most disabling symptoms."," 9. Fatigue interferes with my work, family, or social life."
-                                 ]
+                                 "5. If I could live my life over, I would change almost nothing.",
+                                 "6. My fatigue prevents sustained physical functioning.",
+                                 " 7. Fatigue interferes with carrying out certain duties and responsibilities.",
+                                 " 8. Fatigue is among my three most disabling symptoms.",
+                                 " 9. Fatigue interferes with my work, family, or social life."
+                                 ],
+                   "max": 7,
+                   "results": [
+                               "Your scores suggest that you may not be suffering from fatigue, however if you still feel low and tired constantly, considering seeking help from a psychologist. ",
+                               "Your scores suggest that you exhibit certain symptoms of being fatigues and hence, may need further evaluation by a physician."
+                               ]
                    },
                    {
                    "header": "How well can you handle your Anger? \n\n Instructions \n\n For each question, please choose the answer that best fits the way you deal with the following situations. There is no right or wrong answer.",
                    "questions": [
                                  "1. If I become frustrated when something I'm attempting to fix does not work, I",
                                  "2. When I am verbally criticized, I",
-                                 "3. When unjustly accused of something, I","4. When peers tease me, I","5. When I fail at something that I thought I could succeed at, I","6. When I feel that I am being pushed to change, I","7. When I feel that people are setting limits on me, I","8. If I am rejected when I am trying to help, I"
+                                 "3. When unjustly accused of something, I",
+                                 "4. When peers tease me, I",
+                                 "5. When I fail at something that I thought I could succeed at, I",
+                                 "6. When I feel that I am being pushed to change, I",
+                                 "7. When I feel that people are setting limits on me, I",
+                                 "8. If I am rejected when I am trying to help, I"
                                  ],
-                   "options":[
-                              ["Keep my cool.","Verbally express displeasure.","Hide my anger inside.","Physically take it out on the thing I am trying to fix.","Strike out at anyone or anything that happens to be close."],
-                              ["Listen and try to understand their point of view.","Walk away.","Pout and sulk.","Become argumentative and verbally attack.","Physically strike out at the person."],
-                              ["Stand up for myself.","Assume a passive position and stay silent.","Complain to someone else.","Become verbally aggressive.","Become physically assaultive."],
-                              ["Ignore them.","Tease back.","Leave the group and sulk.","Counterattack aggressively.","Physically attack my tormentor."],
-                              ["Accept it and try to learn from the experience.","A LittleRationalize, and become defensive.","Brood about it.","Put the blame on someone else, where it belongs.","Take my anger and disappointment out on myself or on someone else."],
-                              ["Try to recognize that I may really need to change.","Ignore those trying to push me.","Take it personally.","Dig in my heels and resist all suggestions.","Become physically or verbally assaultive."],
-                              ["Try to understand what is being requested and why.","Passively accept the limits, and generally don't question the need.","Become defensive, resistant and argumentative.","Openly defy or ignore them.","Become physically assaultive, or figure out ways to get even."],
-                              ["Accept that others might not want my help.","Try harder to help.","Take it personally.","Tend to become verbally judgmental of them.","Take it as a personal putdown and often take out my anger on myself or someone else."]
-                              ]
+                   "options": [
+                               [
+                                "Keep my cool.",
+                                "Verbally express displeasure.",
+                                "Hide my anger inside.",
+                                "Physically take it out on the thing I am trying to fix.",
+                                "Strike out at anyone or anything that happens to be close."
+                                ],
+                               [
+                                "Listen and try to understand their point of view.",
+                                "Walk away.",
+                                "Pout and sulk.",
+                                "Become argumentative and verbally attack.",
+                                "Physically strike out at the person."
+                                ],
+                               [
+                                "Stand up for myself.",
+                                "Assume a passive position and stay silent.",
+                                "Complain to someone else.",
+                                "Become verbally aggressive.",
+                                "Become physically assaultive."
+                                ],
+                               [
+                                "Ignore them.",
+                                "Tease back.",
+                                "Leave the group and sulk.",
+                                "Counterattack aggressively.",
+                                "Physically attack my tormentor."
+                                ],
+                               [
+                                "Accept it and try to learn from the experience.",
+                                "A LittleRationalize, and become defensive.",
+                                "Brood about it.",
+                                "Put the blame on someone else, where it belongs.",
+                                "Take my anger and disappointment out on myself or on someone else."
+                                ],
+                               [
+                                "Try to recognize that I may really need to change.",
+                                "Ignore those trying to push me.",
+                                "Take it personally.",
+                                "Dig in my heels and resist all suggestions.",
+                                "Become physically or verbally assaultive."
+                                ],
+                               [
+                                "Try to understand what is being requested and why.",
+                                "Passively accept the limits, and generally don't question the need.",
+                                "Become defensive, resistant and argumentative.",
+                                "Openly defy or ignore them.",
+                                "Become physically assaultive, or figure out ways to get even."
+                                ],
+                               [
+                                "Accept that others might not want my help.",
+                                "Try harder to help.",
+                                "Take it personally.",
+                                "Tend to become verbally judgmental of them.",
+                                "Take it as a personal putdown and often take out my anger on myself or someone else."
+                                ]
+                               ],
+                   "results": [
+                               "Your scores suggest that your anger levels may be higher than usual and you may need some help to manage your anger effectively. It will be good if you can visit a psychologist and seek few sessions to help you with anger management",
+                               "Your scores indicate that While you do have some ability to handle your anger, it appears that you may want to make some changes. Consider visiting a psychologist for learning tips to manage anger effectively. ",
+                               "Your scores indicate that, you seem to be able to handle your anger effectively. Keep up the good work and continue practicing the same strategies that are helping you control your anger! "
+                               ]
                    },
                    {
-                   "header":"Does taking tests make you anxious? \n\n Instructions \n\n Indicate how often each statement describes you by choosing a number from one to five as outlined below. There is no right or wrong answer. \n1 = Never, \n2 = Rarely, \n3 = Sometimes, \n4 = Often, \n5 = Always",
+                   "header": "Does taking tests make you anxious? \n\n Instructions \n\n Indicate how often each statement describes you by choosing a number from one to five as outlined below. There is no right or wrong answer. \n1 = Never, \n2 = Rarely, \n3 = Sometimes, \n4 = Often, \n5 = Always",
                    "questions": [
-                                 "1. _____ I have visible signs of nervousness such as sweaty palms, shaky hands, and so on right before a test. ","2. _____ I have “butterflies” in my stomach before a test. ","3. _____ I feel nauseated before a test.","4. _____ I read through the test and feel that I do not know any of the answers.","5. _____ I panic before and during a test.","6. _____ My mind goes blank during a test.","7. _____ I remember the information that I blanked once I get out of the testing situation.","8. _____ I have trouble sleeping the night before a test.","9. _____ I make mistakes on easy questions or put answers in the wrong places.","10. _____ I have trouble choosing answers."
-                                 ]
+                                 "1. _____ I have visible signs of nervousness such as sweaty palms, shaky hands, and so on right before a test. ",
+                                 "2. _____ I have “butterflies” in my stomach before a test. ",
+                                 "3. _____ I feel nauseated before a test.",
+                                 "4. _____ I read through the test and feel that I do not know any of the answers.",
+                                 "5. _____ I panic before and during a test.",
+                                 "6. _____ My mind goes blank during a test.",
+                                 "7. _____ I remember the information that I blanked once I get out of the testing situation.",
+                                 "8. _____ I have trouble sleeping the night before a test.",
+                                 "9. _____ I make mistakes on easy questions or put answers in the wrong places.",
+                                 "10. _____ I have trouble choosing answers."
+                                 ],
+                   "max": 5,
+                   "results": [
+                               "Please answer all the questions",
+                               "Your scores suggest that You do not suffer from test anxiety and are fairly relaxed before or during an exam.",
+                               "Your scores suggest that You exhibit some of the characteristics of test anxiety, the level of stress and tension is probably healthy.",
+                               "Your scores suggest that You are experiencing an unhealthy level of anxiety. It is recommended that you should evaluate the root cause of your anxiety with the help of a Psychologist."
+                               ]
                    },
                    {
                    "header": "Know your level of Sexual Satisfaction \n\n Instructions \n\n Thinking about your sex life during the last six months, please rate your satisfaction with the following aspects - \n1 = Not at all satisfied, \n2 = A little satisfied, \n3 = Moderately satisfied, \n4 = Very satisfied, \n5 = Extremely satisfied \nThere is no right or wrong answer.",
-                   "questions" : [
-                                  "1. The quality of my Orgasms","2. My “letting go” and surrender to sexual pleasure during sex","3. The way I sexually react to my partner","4. My body’s sexual functioning","5. My mood after sexual activity","6. The pleasure I provide to my partner","7. The balance between what I give and receive in sex","8. My partner’s emotional opening up during sex","9. My partner’s ability to orgasm","10. My partner’s sexual creativity","11. The variety of my sexual activities","12. The frequency of my sexual activity"
-                                  ]
+                   "questions": [
+                                 "1. The quality of my Orgasms",
+                                 "2. My “letting go” and surrender to sexual pleasure during sex",
+                                 "3. The way I sexually react to my partner",
+                                 "4. My body’s sexual functioning",
+                                 "5. My mood after sexual activity",
+                                 "6. The pleasure I provide to my partner",
+                                 "7. The balance between what I give and receive in sex",
+                                 "8. My partner’s emotional opening up during sex",
+                                 "9. My partner’s ability to orgasm",
+                                 "10. My partner’s sexual creativity",
+                                 "11. The variety of my sexual activities",
+                                 "12. The frequency of my sexual activity"
+                                 ],
+                   "max": 5,
+                   "results": [
+                               "Please answer all the questions",
+                               "Your scores suggest that you are currently Dissatisfied with your sexual life. A number of times physical dissatisfaction also arises due to emotional dissatisfaction. Thus, consider seeking help from a Relationship Expert or a Sexologist, in case you feel there could be issues other than emotional intimacy",
+                               "Your scores suggest that you are Moderately satisfied with your sexual life. Hence, it is always a good idea to understand and communicate each others physical needs and desires and then act on them. If you feel you are unable to express, consider speaking to a Counselor",
+                               "Your scores suggest that you are Extremely Satisfied with your sexual life. Keep it up !High sexual satisfaction is often a determinant of a good and healthy relationship."
+                               ]
                    },
                    {
                    "header": "Feeling low, sad or low on energy? \n\n Instructions \n\n The following questions ask about how you have been feeling over the past two weeks. Please indicate your answer- which is closest to how you have been feeling. \n1 = Some of the time, \n2 = Slightly less than half the time, \n3 = Slightly more than half the time, \n4 = Most of the time, \n5 = All the time \nThere is no right or wrong answer.",
                    "questions": [
-                                 "1. I feel low or sad.","2. I’ve lost interest in daily activities.","3. I feel low on energy and strength.","4. I feel less self-confident.","5. I feel guilty","6. I feel that life isn’t worth living.","7. I’ve been having difficulty in concentrating","8. I feel restless ","9. I have trouble sleeping at night.","10. My appetite has increased or decreased"
-                                 ]
+                                 "1. I feel low or sad.",
+                                 "2. I’ve lost interest in daily activities.",
+                                 "3. I feel low on energy and strength.",
+                                 "4. I feel less self-confident.",
+                                 "5. I feel guilty",
+                                 "6. I feel that life isn’t worth living.",
+                                 "7. I’ve been having difficulty in concentrating",
+                                 "8. I feel restless ",
+                                 "9. I have trouble sleeping at night.",
+                                 "10. My appetite has increased or decreased"
+                                 ],
+                   "max": 5,
+                   "results": [
+                               "Your scores suggest that No signs of clinical depression are evident.",
+                               "Your scores suggest that you may be suffering from MILD DEPRESSION. However, further evaluation is needed.",
+                               "Your scores suggest that you may be suffering from MODERATE DEPRESSION. However, further evaluation is a must.",
+                               "Your scores suggest that that you may be suffering from SEVERE DEPRESSION and need clinical attention immediately. It is strongly recommended to visit a mental health professional personally for further evaluation and treatment. "
+                               ]
                    },
                    {
-                   "header":"Do you find yourself worrying a lot? \n\n Instructions \n\n Over the last 2 weeks, how often have you been bothered by the following problems? \n0 = Not at all sure \n1 = Several days, \n2 = Over half days, \n3 = Nearly every day \nThere is no right or wrong answer.",
+                   "header": "Do you find yourself worrying a lot? \n\n Instructions \n\n Over the last 2 weeks, how often have you been bothered by the following problems? \n0 = Not at all sure \n1 = Several days, \n2 = Over half days, \n3 = Nearly every day \nThere is no right or wrong answer.",
                    "questions": [
                                  "1. I’ve been Feeling nervous, anxious, or on edge.",
-                                 "2. I can’t stop or control being worried.","3. I’ve been Worrying too much about different things.","4. I am having trouble relaxing.","5. I am restless and it's hard to sit still.","6. I get easily annoyed or irritable.","7. I Feel afraid as if something awful might happen."
-                                 ]
+                                 "2. I can’t stop or control being worried.",
+                                 "3. I’ve been Worrying too much about different things.",
+                                 "4. I am having trouble relaxing.",
+                                 "5. I am restless and it's hard to sit still.",
+                                 "6. I get easily annoyed or irritable.",
+                                 "7. I Feel afraid as if something awful might happen."
+                                 ],
+                   "max": 3,
+                   "results": [
+                               "Your scores suggest that you may be suffering from MILD Anxiety however further evaluation is needed.",
+                               "Your scores suggest that you may be suffering from MODERATE Anxiety. Though ,further evaluation is needed, a visit to a psychologist may be very beneficial for you",
+                               "Your scores suggest that you may be suffering from SEVERE Anxiety. It is recommended that you visit a mental health professional at the earliest and seek help. ",
+                               "Your scores suggest that you exhibit certain signs of Anxiety Disorder."
+                               ]
                    },
                    {
-                   "header":"How satisfied are you with your Partner? \n\n Instructions \n\n This scale measures your general relationship satisfaction. Rate the following statements on the basis of how much agree or disagree with them on a scale on 1 to 5. \n1 = Strongly Disagree, \n2 = Disagree, \n3 = Neutral, \n4 = Agree, \n5 = Strongly Agree \nThere is no right or wrong answer.",
+                   "header": "How satisfied are you with your Partner? \n\n Instructions \n\n This scale measures your general relationship satisfaction. Rate the following statements on the basis of how much agree or disagree with them on a scale on 1 to 5. \n1 = Strongly Disagree, \n2 = Disagree, \n3 = Neutral, \n4 = Agree, \n5 = Strongly Agree \nThere is no right or wrong answer.",
                    "questions": [
-                                 "1. I feel that I can share my innermost concerns, feelings and fears with my partner.","2. I am content with the way my partner and I resolve conflicts and arguments.","3. My partner and I are very affectionate and caring towards each other.","4. My partner and I are very intimate and close to each other.","5. I am satisfied with my role in the relationship.","6. I am satisfied with my partner’s role in the relationship.","7. I am satisfied with the relationship that I share with my partner."
-                                 ]
+                                 "1. I feel that I can share my innermost concerns, feelings and fears with my partner.",
+                                 "2. I am content with the way my partner and I resolve conflicts and arguments.",
+                                 "3. My partner and I are very affectionate and caring towards each other.",
+                                 "4. My partner and I are very intimate and close to each other.",
+                                 "5. I am satisfied with my role in the relationship.",
+                                 "6. I am satisfied with my partner’s role in the relationship.",
+                                 "7. I am satisfied with the relationship that I share with my partner."
+                                 ],
+                   "max": 5,
+                   "results": [
+                               "Your scores indicate that your relationship may not be at the best stages at this point and thus, major assistance from a professional relationship therapist is needed as soon as possible.",
+                               "Your scores indicate that you are moderately satisfied in your relationship. That is you have equal number of strengths and weaknesses. Your relationship is at a good stage and may benefit with little consistent efforts",
+                               "Your scores indicate that Your relationship is doing very well and you seem to be very satisfied with your partner. Keep up the good work!"
+                               ]
                    },
                    {
                    "header": "Find out your Parenting Style \n\n Instructions \n\n Please select the below given options for the following questions.\nThere is no right or wrong answer.",
                    "questions": [
-                                 "1. Your son hits another child at soccer practice. You would...", "2. Your son and his friends have made a big mess in your playroom and now want to go play outside. You would...","3. If your pre-teen daughter wants to rent an R rated movie that her friends have all watched, you would...","4. Your daughter is putting off going to bed because she says that she wants something to eat, and you...","5. When your kids don't do their chores you...","6. When your kids whine and have tantrums you...","7. If your kids get in trouble, you...","8. Your son wants a new toy at the grocery store, so you...","9. If your preschool age daughter has a nightmare and wakes you up, you would...","10. The main goal of parenting and discipline is to..."
+                                 "1. Your son hits another child at soccer practice. You would...",
+                                 "2. Your son and his friends have made a big mess in your playroom and now want to go play outside. You would...",
+                                 "3. If your pre-teen daughter wants to rent an R rated movie that her friends have all watched, you would...",
+                                 "4. Your daughter is putting off going to bed because she says that she wants something to eat, and you...",
+                                 "5. When your kids don't do their chores you...",
+                                 "6. When your kids whine and have tantrums you...",
+                                 "7. If your kids get in trouble, you...",
+                                 "8. Your son wants a new toy at the grocery store, so you...",
+                                 "9. If your preschool age daughter has a nightmare and wakes you up, you would...",
+                                 "10. The main goal of parenting and discipline is to..."
                                  ],
                    "options": [
-                               ["Get mad and tell the other boy to hit him back","Ignore them and just let them fight or play","Tell him that it is not right to hit people, make him apologize, and take away a privilige if this is a repeat offense"],
-                               ["Yell at them and make them clean up", "Let them go out and clean up yourself","Help them clean up by making a game out of who can pick up the most toys"
+                               [
+                                "Get mad and tell the other boy to hit him back",
+                                "Ignore them and just let them fight or play",
+                                "Tell him that it is not right to hit people, make him apologize, and take away a privilige if this is a repeat offense"
                                 ],
-                               ["Get angry and tell her she can't rent any movies","Let her watch it","Say no and help her find a more age appropriate movie"],
-                               ["Get mad and make her go to bed hungry","Let her eat whatever she wants","Let her have a nutritious snack, but tell her that she will have to start eating more at dinner so that she isn't hungry at bedtime"],
-                               ["Get mad, yell and make them do them right away","Do them yourself","Give them a helpful reminder that they need to be responsible and do their chores"],
-                               ["Get mad and send them to their rooms","Give in to stop the whining","Don't give in and afterwards explain better ways that they can express their frustrations"],
-                               ["Get mad and yell or spank them","Don't do much of anything","Discipline them and later explain better choices they could have made so they don't get in trouble again"],
-                               ["Get mad and tell him he can't have any new toys","Buy it so that he doesn't have a tantrum","Tell him no, but explain that you will bring him back to buy it when he saves enough of his allowance"],
-                               ["Get mad at her for waking you up and tell her to go back to bed","Let her go back to sleep wherever she wants","Comfort her and help her go back to sleep once she calms down"],
-                               ["Get your kids to listen to you no matter what","Make sure everyone is happy and doing whatever they want","Teach your children why your rules are important and help them learn to make good choices on their own"]
+                               [
+                                "Yell at them and make them clean up",
+                                "Let them go out and clean up yourself",
+                                "Help them clean up by making a game out of who can pick up the most toys"
+                                ],
+                               [
+                                "Get angry and tell her she can't rent any movies",
+                                "Let her watch it",
+                                "Say no and help her find a more age appropriate movie"
+                                ],
+                               [
+                                "Get mad and make her go to bed hungry",
+                                "Let her eat whatever she wants",
+                                "Let her have a nutritious snack, but tell her that she will have to start eating more at dinner so that she isn't hungry at bedtime"
+                                ],
+                               [
+                                "Get mad, yell and make them do them right away",
+                                "Do them yourself",
+                                "Give them a helpful reminder that they need to be responsible and do their chores"
+                                ],
+                               [
+                                "Get mad and send them to their rooms",
+                                "Give in to stop the whining",
+                                "Don't give in and afterwards explain better ways that they can express their frustrations"
+                                ],
+                               [
+                                "Get mad and yell or spank them",
+                                "Don't do much of anything",
+                                "Discipline them and later explain better choices they could have made so they don't get in trouble again"
+                                ],
+                               [
+                                "Get mad and tell him he can't have any new toys",
+                                "Buy it so that he doesn't have a tantrum",
+                                "Tell him no, but explain that you will bring him back to buy it when he saves enough of his allowance"
+                                ],
+                               [
+                                "Get mad at her for waking you up and tell her to go back to bed",
+                                "Let her go back to sleep wherever she wants",
+                                "Comfort her and help her go back to sleep once she calms down"
+                                ],
+                               [
+                                "Get your kids to listen to you no matter what",
+                                "Make sure everyone is happy and doing whatever they want",
+                                "Teach your children why your rules are important and help them learn to make good choices on their own"
+                                ]
+                               ],
+                   "results": [
+                               "Your Parenting Style is - AUTHORITARIAN\n\nAn authoritarian parent 'attempts to control a child's behavior and attitudes, stressing the importance of obedience to authority and discouraging discussion. Parents who use this method tend to rely upon punishment, which is often spanking or other physical measures'.",
+                               "Your Parenting Style is - PERMISSIVE\n\nA permissive parent 'exercises minimal control. Children of permissive parents are allowed to set their own schedules and activities. Permissive parents generally do not demand the same levels of behavior as authoritarian and authoritative parents'. ",
+                               "Your Parenting Style is - AUTHORITATIVE\n\nAn authoritative parent 'operates on the belief that both the child and the parent have certain rights and that the needs of both are important. The parent is sure that she is in control and doesn't need to assert physical force to keep the child on the right track. Rather, an authoritative parent is more likely to control her child by setting rules and explaining why these rules are important and why they must be followed'."
                                ]
                    }
                    ],
     "solution": [
-                 1
+                 [
+                  "Behaviour issues in Children \n\n Children are like dough, they take whichever shape in which you mould them. However, in spite of our repeated efforts, they seem to manifest certain behavioural issues. Hence, disciplining is an important aspect of parenting and cannot be taken lightly. Though these issues may be different for each child, they can be worked upon! \n\n  << Read More >>",
+                  "How do I establish a Good Bond with My Kids?\n\n Parent- child relationship is the first relationship a child is exposed to when he/she enters this world. It is through this relationship that the child develops standards for the other relationships. Hence, it is imperative to develop a strong bond with our children. Read more to find out ways to establish a good bond with your child.\n\n  << Read More >>",
+                  "Improving Academics\n\n Expecting your child to perform well academically as per his/her age is nothing wrong. However, having unrealistic expectations may in turn reduce the child’s potential to perform well. If you find your child struggling with studies, it would be wise to look into the matter and help your child deal constructively. Read more to find out tips on improving academics.\n\n  << Read More >>",
+                  "Improving Concentration/ Finding Focus\n\n Children can be very restless and inattentive at times. To help your kids improve their attention span and focus more despite the distractions requires certain efforts and you can provide aid in building this important life skill in your child. Read more to find out tips on improving Concentration.\n\n  << Read More >>",
+                  "How to deal with a complaining child?\n\n All of us have a tendency to complaint; however it becomes a task when this becomes an attitude. While we all put in our best to nurture our children, they may be a point where they begin to complaint a lot. Though this may make us question ourselves and our parenting styles, giving up is not an option. As with other issues, the phase shall pass too, and not become a burden if you deal effectively. Read more to find effective ways to deal with your child’s complaining attitude.\n\n  << Read More >>",
+                  "Temper Tantrums in Children\n\n Handling kids with unruly temperament is a tough job, but not all kids display bad temper without a reason. Try understanding the underlying reason as to why your child is behaving in such way. Read more to understand what causes temper tantrums and how can we deal with them effectively.\n\n  << Read More >>",
+                  "Is your child weak at academics? (Learning and Intellectual Disabilities)\n\n A child with Learning disabilities will not be able to perform well at a regular school. If you find your child not doing well in academics or other areas of education in comparison to others of his age, it is time to seek professional help. Read more to find out tips on improving academics and identifying symptoms of learning disabilities.\n\n  << Read More >>",
+                  "Does your Child have Emotional Troubles?\n\n Emotional development of a child happens in different stages. Sometimes, it is hard for parents to see their kids go through emotional turmoil and not being able to cope with petty issues. Know how you can find out if something is troubling your child, and how can you help make the situation better.\n\n  << Read More >>",
+                  "Fussy Eaters\n\n My child should be healthy, is what all parents think and aim for. However, not all children happily eat the food you cook for them. Some kids are really choosy about the food they like and some don’t eat healthy food at all. Know what reinforces fussiness in children and help avoid it.\n\n  << Read More >>",
+                  "Bed Wetting\n\n Bed-wetting is one of the most common health issues among children. Though normal until a certain age, bed-wetting can be a serious issue if it prolongs. Read more to know how you can train your child, and help him/her overcome the habit of bed-wetting.\n\n  << Read More >>",
+                  "Quiet Children\n\n Children who are extremely quiet, face difficulty in school, tuitions, social gatherings and later on, may even find difficulty making relationships or in their professional lives. Though this could be your child’s personality trait, parents can encourage their child to bring out their feelings and initiate talks with them. Read more to find few parenting tips that can be helpful in helping your child open up.\n\n  << Read More >>",
+                  "Separation Anxiety\n\n Separation anxiety is a common emotion that babies or young kids go through when separated from someone (mostly mother) or something. Though a normal feeling which each child goes through, if not dealt with complete care can have major repercussions in the future. Help your baby overcome separation anxiety using few methods given by experts.\n\n  << Read More >>",
+                  "Sibling Rivalry\n\n Sibling relationship can be beautiful if children are taught to maintain a good relationship with each other. Though arguments and fights between siblings are considered normal, if gone out of hands can destroy the family peace. Thus, it is necessary for parents to intervene and help manage the initial differences or even seek psychological aid, if required. Read More to understand how even normal sibling rivalry can be sometimes beyond control!\n\n  << Read More >>",
+                  "Temper Tantrums in Children\n\n Handling kids with unruly temperament is a tough job, but not all kids display bad temper without a reason. Try understanding the underlying reason as to why your child is behaving in such way. Read more to understand what causes temper tantrums and how can we deal with them effectively.\n\n  << Read More >>",
+                  "Childhood Depression\n\n Does your child seem upset most of the times? Does he/she seem to cry at the drop of a hat? Is he/she not as energetic as he/she use to be? Find out what could be the latent reasons and how can you help to make the situation better? Help your child cope effectively with depressing events and avoid depression.\n\n  << Read More >>"
+                  ],
+                 [
+                  "Sudden Withdrawal in Adolescents\n\n Noticed your teen move away from “fun”, smiles and talk less even among friends, lately?  Is he/she spending too much alone time in the bedroom? BEWARE! It may be an omen of depression. Despite various causes of such behavior, there are also solutions available to prevent teen depression.\n\n  << Read More >>",
+                  "Behavior Issues in Adolescents\n\n Adolescents go through a number of changes: physical, emotional, cognitive, social, hormonal etc. which may lead exorbitant changes in behavior. Thus, it is important for parents to know why teens behave the way they do, and how to deal with them to help them cope effectively with the enormous changes they must be facing. Read more to know right, do it right, and help your teen kid go through a cherishable adolescence.\n\n  << Read More >>",
+                  "Self Esteem\n\n Does your child nullify your praise and appreciation and rather feels low about self and regards oneself of less value than others? He/ she could be suffering from Low Self- Esteem. Self-esteem is people’s sense of self-worth. Though a lot of adolescents experience changing self- esteems through their teen years, low self-esteem can be more dangerous than simply a poor evaluation of self. Low self-esteem can have adverse effects including substance abuse, self-harm and eating disorders. Help your teen boost up self-esteem!\n\n  << Read More >>",
+                  "Anger Issues in Adolescents\n\n Erratic onsets of anger, displaying anger on petty issues and indulging in self harm and violence to manifest anger can be signs of danger, for not just your adolescent, but also others around. Find out how to help your child deal with anger issues constructively.\n\n  << Read More >>",
+                  "Sudden Behavioral Changes\n\n Behavioral changes among the adolescents are fairly normal, but drastic behavior change could pose some latent impairment. If you find your teen behaving differently, it is important to understand the reasons for such behaviors identify the warning signs and also know how to deal with it and what time.\n\n  << Read More >>",
+                  "Mood Swings during Adolescence\n\n Your teen kid is happy. Oh! She’s probably angry now. Nope, she’s sad. Mood swings can be difficult to handle, for the parent as well as the child. Learn how to deal with mood swings and help your child cope better.\n\n  << Read More >>",
+                  "Peer Pressure\n\n An over-bearing pressure to align with peers and ‘fit in’ the crowd becomes much intense during teenage. Though normal, excessive peer pressure can result into loss of individuality and creativity of the child. Understand deeper about the effects of peer pressure that your child could be subjected to.\n\n  << Read More >>"],
+                 [
+                  "Problems making friends\n\n Do you face problems initiating or adding to a conversation? Do you shy away from people? May be, if you work on some of your traits, you can help yourself come out of this issue of not being able to make friends. If you are being bullied, learn how to stand up for yourself and seek help.\n\n  << Read More >>",
+                  "Priming yourself for friendship\n\n Priming involves preparing oneself to initiate a friendship. You may want to become friends with a person, but may not know what steps to take. Few things, when kept in mind beforehand can help you develop better and stronger friendships.\n\n  << Read More >>",
+                  "When making friends is difficult\n\n Common interests? Observation? What should you look for when finding friends? Get to know how to overcome shyness and learn to make friends without difficulty.\n\n  << Read More >>",
+                  "Are you being bullied?\n\n Find it difficult to make friends because you’re surrounded by bullies? Learn to stand up for yourself and gain confidence. Seek help and inform others and be assertive. Here’s how.\n\n  << Read More >>",
+                  "Friends dumped without a reason\n\n Yes, it is tough to be left behind without a reason, and this may even hamper your ability to further make friends. But this is not the end. You can still cope and come out successfully. Few changes in behavior patterns can help make friendship a cherishable experience.\n\n  << Read More >>",
+                  "Rejection/Avoidance from friends\n\n Rejection may sometimes result due to our own characteristics or habits that might hurt people and drive them away from us. It is important to introspect and judge what kind of a friend we are. Do you think you are responsible for the reason people don’t want to be friends with you? Read More to understand how you could be contributing to avoidance from friends.\n\n  << Read More >>",
+                  "Competitive Children\n\n Competition may sometimes reduce motivation and in turn evoke dissatisfaction among kids who consistently lose out. Competition is good, but an urging desire to always succeed is unrealistic. Help your child to overcome the negative effects of competition.\n\n  << Read More >>"
+                  ],
+                 [
+                  "Post Partum Depression\n\n Feel extremely low post delivering your baby? You might be going through Post-Partum Depression. Fear not! It is temporary. But learn more of what it is and how to deal with it. By just focusing a little more on your lifestyle and health, you can still enjoy motherhood. Read More to make parenting a beautiful experience.\n\n  << Read More >>",
+                  "Stress during parenthood\n\n Parenting though is a beautiful experience can be very stressful too at times. Though stress is normal and sometimes, even helpful, but too much can be detrimental to health. It is vital to know what things or situations trigger stress and how to manage stress to deal with situations efficiently.\n\n  << Read More >>",
+                  "How can I start talking to my kids about Sexuality?\n\n Talking about sexuality might involve some effort, especially in the Indian context, but it isn’t as hard as it seems. Little by little, engaging the child in conversation about sexuality and educating rightly depending on the child’s age can be helpful. It is an important aspect of parenthood and if you understand how to go about the talk, it can help the child a long way, throughout his life. Read More to learn ways in which you could talk subtly to your children about sex.\n\n  << Read More >>"
+                  
+                  ],
+                 [
+                  "Communication problems\n\n Communication is a vital ingredient of any relationship.  Poor communication can ruin most relationships. Thus, it is very important for both the partners to resolve any communication issues that they face. Certain small problem-solving strategies help partners to communicate well and make their relationship a worthwhile experience.\n\n  << Read More >>",
+                  "Sex issues\n\n Physical intimacy takes one of the prime stands in romantic relationships. Loss of physical intimacy or an unhappy sex life of the couple can stem from various roots and has saddening consequences. For a happier and stronger bond, it gets important to rekindle the sex life, rather consistently.\n\n  << Read More >>",
+                  "Emotional infidelity\n\n Infidelity of any kind can be a very painful experience. Cheating, in which one of the partner is emotionally involved with a third person is termed as Emotional Infidelity. Emotional infidelity between a couple can be heart-breaking for one of the partners, and at times, even for both. If you think your partner is hiding things from you or the secrecy between the two of you is being shared by someone else too, then it’s time you bring it out in the open.\n\n  << Read More >>",
+                  "How can we cope with the aftermath of a partner’s extra-marital affair?\n\n So, you realize that your partner has been involved in an external affair. Now what? There are reasons and there are solutions too. Do not swipe it under the mat. To avoid bitterness in the relationship and also to mend this broken relationship, some measures ought to be taken. Read More to understand how can you continue your relationship even after knowing your partner had an affair with someone.\n\n  << Read More >>",
+                  "Dealing with a nagging spouse\n\n Dealing with a spouse who keeps instructing you about the littlest jobs, and never gives you your space, can be taxing. Believe it or not, it is affecting your mental well-being and also the relationship between you two. A few constructive measures, undertaken by both of you can help reduce the friction in the relationship that is being caused due to constant nagging.\n\n  << Read More >>",
+                  "Feel less loved\n\n Do you feel that your spouse loves you less than what you deserve? Could you help improve the situation between the two of you? Take initiative and bring the issue out in open. Learn what to talk and how to discuss your current emotions with your spouse.\n\n  << Read More >>"
+                  ],
+                 [
+                  "How Do I move forward after a divorce?\n\n It is normal to feel melancholic after being separated from your spouse. But try understanding the reasons behind the divorce and don’t let yourself drown into a vicious circle of negative thoughts and guilt. It’s time to move on, and it’s not impossible. Read More to unfold steps which will help you get over your rough patch of life.\n\n  << Read More >>",
+                  "We are seperating, and I am very worried about our kids\n\n You might not be any more in love with each other, but your kids deserve the love of both parents. Despite separation, you can make efforts to reduce the anxiety that the situation might bring for your kids. Learn few measures to help your kids cope with their parents’ divorce.\n\n  << Read More >>",
+                  "Going through separation\n\n The process of separation can be very taxing, and you need to deal with it whether you had planned this or not. Plainly giving into the situation may help neither of you. Yes, it is going to be painful and cathartic, but it leads to a new chapter of life. Let’s try and be accepting of the situation, and know that you aren’t going through this alone. Read More to find steps which will help you deal through this difficult phase of life.\n\n  << Read More >>",
+                  "Single Parenting\n\n Being a single parent, brings with it heavy stress, anxiety and also negative emotions, for both the children and the parent. However, when dealt with effectively, single parenting can also be a beautiful experience.  Read More to find how to do effective single parenting.\n\n  << Read More >>",
+                  "Effect of divorce on children\n\n No matter what age or how mature your kids are, divorce is excruciating for a child. If you and your spouse are deciding on divorce, it is your responsibility to understand the consequences and help the kids cope with the stress caused by your decision.\n\n  << Read More >>"
+                  ],
+                 [
+                  "Does the work place make you unhappy?\n\n Not being treated right by your boss? Don’t like the working environment? Don’t feel productive? There could be various reasons that you are unhappy with your job. Don’t be stressed, let’s look out for solutions.\n\n  << Read More >>",
+                  "Do you feel your work is not being recognized?\n\n You are working hard, day in and day out, but your hard work isn’t paying off. Does that lower your motivation to work? Does that pull down your energy? Worrying too much about it or changing your job may not be the best solution. However, developing some skills could be helpful for guiding you outshine in your workplace. If you are putting in effort and still harvesting nothing out of it, then it is time you ride the bike smartly.\n\n  << Read More >>",
+                  "Difficult Boss?\n\n Got a tough boss? You can still win his/her heart by keeping in mind few key tips. To help understand the psychology, and deal successfully with your boss, we have some suggestions and habits you can practice.\n\n  << Read More >>",
+                  "Are you unsure about your future?\n\n You’ve tried and tested jobs, but are you still unsure of what to do? Developing a career involves taking efforts in finding your interests and the job which would help maximize your potential. Guidelines by experts and counselors can help you find the path best suited for you growth.\n\n  << Read More >>",
+                  "Are you overburdened with work?\n\n Too much on your platter? When you have a lot to do, you get so lost in toiling yourself to work, that you forget about health, family, and personal well-being. Results- you may become very less productive and may not be able to do best in anything. Take time to reduce and manage your workload. Read More to understand how you could manage your workload effectively.\n\n  << Read More >>",
+                  "Are you facing problems with your coworkers?\n\n Conflicts among co-workers can reduce work efficiency, big time. If you are undergoing problems with your colleagues, bring out the issue and take steps to deal with it. Learn to handle work-related conflicts smartly. Read More to learn steps that will help you form strong bonds at work.\n\n  << Read More >>",
+                  "Avoiding Office Politics\n\n No realm is free of politics. However, try not getting into office or work-related politics. It is important to maintain healthy relationships with clients and colleagues in order to work productively and with ease. However no matter how much we try, we may get roped into the politics at workplace, which may eventually impact us personally and professionally. Read more to learn few self-help measures that can save you from negative consequences of office politics.\n\n  << Read More >>",
+                  "Do you experience communication problem at workplace?\n\n Poor communication skills or even less communication can lead to misunderstandings and conflicts. Though communication is an imperative ingredient in all spheres of life, communication at work is even more imperative. Help yourself gain knowledge about the kind of language and communication skills you need to develop to remain at peace while on work.\n\n  << Read More >>"
+                  ]
                  ],
     "stress": [
-               1
+               ["Anyone can benefit from psychotherapy to become a better problem solver.",
+                "Support from family and friends you can trust is important when you're having a hard time. Psychologists have years of specialized education, training and experience that make them experts in understanding and treating complex problems.",
+                "The point of wanting you to look backward is to better understand your present and make positive changes for the future. However, in some instances your psychologist will choose to focus mainly on the current problem or crisis that brought you into treatment and not delve into your past at all.",
+                "Treatment for mental health problems varies depending on the individual and could include medication, therapy, or both. Many individuals also work with a support system during the healing and recovery process.",
+                "Research shows that hypnotized people can resist and even oppose hypnotic suggestions, and won't do things that are out of character. Media portrays hypnosis wrongly.",
+                "ECT has given a new lease on life to many people who suffer from severe and debilitating depression. It is used when other treatments such as psychotherapy or medication fail or cannot be used. Patients who receive ECT are asleep and under anaesthesia, so they do not feel any pain."],
+               [
+                "Mental health problems are not always dependent on individual characteristics. Most of the times, the surroundings and society play a major role in the development of mental health issues.",
+                "Most people with mental illness are not violent and only 3%-5% of violent acts can be attributed to individuals living with a serious mental illness.",
+                "People with mental health problems are just as productive as other employees. Employers who hire people with mental health problems report good attendance and punctuality as well as motivation, good work, and job tenure on par with or greater than other employees.",
+                "Studies show that people with mental health problems get better and many recover completely. Recovery refers to the process in which people are able to live, work, learn, and participate fully in their communities. There are more treatments, services, and community support systems than there were ever before, and they are highly effective.",
+                "While experts do recognize that there is lateralization of brain function (that is, certain types of tasks and thinking tend to be more associated with a particular region of the brain), no one is fully right-brained or left-brained. In fact, we tend to do better at tasks when the entire brain is utilized, even for things that are typically associated with a certain area of the brain.",
+                "Dozens of studies demonstrate that people with similar personality traits are more likely to be attracted to and hang out with each other than people with dissimilar personality traits.","Research shows that low self-esteem isn't strongly associated with poor mental health.",
+                "Brain disorders, like heart disease and diabetes, are legitimate medical illnesses. Research shows there are genetic and biological causes for psychiatric disorders, and they can be treated effectively.",
+                "Most experts agree that a genetic susceptibility, combined with other risk factors, leads to a psychiatric disorder. In other words, mental illnesses have a physical cause."],
+               ["Not all anger is unhealthy or destructive. Sometimes anger is definitely justified. In situations where you want the other person to learn something, or when the behaviour involves a habit that might be harmful, getting angry is not wrong.",
+                "Anger typically occurs in degrees, ranging from mild annoyance to intense rage.",
+                "Anger management prevents you from saying or doing something in your anger that you will later regret. Rather, it involves calming yourself, making cool-headed assessments of the situation, and finally taking sensible action. With practice, this can be accomplished in a matter of seconds.",
+                "Studies have shown that there are no differences between the incidents of aggression on the night of a full moon and on any other night."],[
+                                                                                                                                                             "Depression has nothing to do with being lazy or weak. It results from changes in brain chemistry or brain function, and medication and/or psychotherapy often help people to recover",
+                                                                                                                                                             "It is not normal for older adults to be depressed. Signs of depression in older people include a loss of interest in activities, sleep disturbances and lethargy. Depression in the elderly is often undiagnosed, and it is important for seniors and their family members to recognize the problem and seek professional help.",
+                                                                                                                                                             "Depression is something that is much more serious than just being sad. It's when a person feels a sadness which is so severe it interferes with everyday life, and causes symptoms such as loss of appetite, sleeping issues, loss of concentration and/or low energy levels. Depression also lasts longer than a bout of sadness."],
+               [
+                "Addiction is a disease that generally results from changes in brain chemistry. It has nothing to do with being a bad person.",
+                "A person starts out as an occasional drug user, and that is a voluntary decision. But as times passes, something happens, and that person goes from being a voluntary drug user to being a compulsive drug user. Why? Because over time, continued use of addictive drugs changes your brain — at times in dramatic, toxic ways, at others in more subtle ways, but virtually always in ways that result in compulsive and even uncontrollable drug abuse.",
+                "Virtually no one wants to undergo de-addiction. Two of the primary reasons people seek de-addiction are because the court ordered them to do so, or because loved ones urged them to seek treatment. Many scientific studies have shown convincingly that those who enter addiction treatment programs in which they face “high pressure” to confront and attempt to surmount their addiction comparatively do better in treatment, regardless of the reason they sought treatment in the first place.",
+                "Research shows that eating a healthy diet and exercising don't reduce the health risks associated with smoking."],
+               [
+                "Stress is different for different people. What may be stressful for one, may not be stressful for another.",
+                "You can plan your life so that stress does not overwhelm you. Effective planning involves setting priorities and working on simple problems first, solving them, and then going on to more complex difficulties.",
+                "Drinking alcohol in fact stimulates the release of the stress hormone cortisol, which further increases our need for alcohol, and it leads to a circular reaction."],
+               [
+                "Dozens of studies demonstrate that people with similar personality traits are more likely to be attracted to and hang out with each other than people with dissimilar personality traits.",
+                "Predicting each other's behaviour and knowing each other's needs is not a very healthy measure of evaluating the love between partners. Communication is an important and indispensable part of any relationship.",
+                "As responsibilities grow, couples have less time and energy for each other. A decrease in passion and urging overtime does not signify an unhealthy relationship."]
                ],
     "articles": [
-                 1
+                 "http://www.mycity4kids.com/parenting/article/why-do-kids-lie-and-how-to-deal-with-it-expert-talk",
+                 "http://www.mycity4kids.com/parenting/article/do-sports-affect-a-teenagers-life-everyday",
+                 "http://www.mycity4kids.com/parenting/article/does-your-husband-love-you-as-much-after-having-a-baby",
+                 "http://www.mycity4kids.com/parenting/article/calm-parenting-top-tips-to-manage-anger-in-children",
+                 "http://www.mycity4kids.com/parenting/article/the-super-power-of-first-love-how-mothers-should-deal-with-their-teenagers",
+                 "http://www.mycity4kids.com/parenting/article/step-family-and-blended-family-help-guide",
+                 "http://www.mycity4kids.com/parenting/article/overcoming-the-guilt-of-being-a-working-mother",
+                 "http://www.mycity4kids.com/parenting/article/single-parenthood-tips-to-raise-a-child-alone-and-having-fun-while-doing-so",
+                 "http://www.mycity4kids.com/parenting/article/choosing-the-correct-career-path",
+                 "http://www.mycity4kids.com/parenting/article/media-violence-and-its-effect-on-children",
+                 "http://www.mycity4kids.com/parenting/article/10-swine-flu-myths-busted-wearing-a-mask-may-not-be-helping-you",
+                 "http://www.mycity4kids.com/parenting/article/dont-judge-me-im-just-a-child"
                  ],
     "music": []
 }

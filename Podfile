@@ -3,9 +3,7 @@
 # Uncomment this line if you're using Swift
 # use_frameworks!
 
-target 'SimpleTable' do
-
-pod 'TNRadioButtonGroup'
-
+target 'MindnWellness' do
+pod 'MBProgressHUD', '~> 0.9.1'
 end
 

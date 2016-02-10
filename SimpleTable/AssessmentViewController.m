@@ -7,16 +7,15 @@
 //
 
 #import "AssessmentViewController.h"
-#import "RadioButtonCell.h"
-#import <TNRadioButtonGroup/TNRadioButtonGroup.h>
 #import <CoreText/CoreText.h>
 
-@interface AssessmentViewController ()
+@interface AssessmentViewController ()<RadioButtonCellDelegate>
 
 @end
 
 @implementation AssessmentViewController {
     NSMutableDictionary *_sliderDicValues;
+    NSMutableDictionary *_radioButtonDicValues;
 }
 
 - (void)viewDidLoad {
@@ -26,9 +25,11 @@
     self.tableView.delegate   = self;
     
     _sliderDicValues = [[NSMutableDictionary alloc] init];
+    _radioButtonDicValues = [[NSMutableDictionary alloc] init];
     
     self.contentView.layer.cornerRadius = 6.f;
     self.tableView.backgroundColor = [UIColor clearColor];
+    
     self.contentView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.9f];
     
     [self.navigationController.navigationBar setBarTintColor:self.navBarColor];
@@ -53,13 +54,37 @@
 #pragma mark - Tableview Datasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    
+     NSArray *options = self.details[@"options"];
+    
+    // if slider view
+    if (options == nil) {
+        return 1;
+    }
+    else {
+        NSArray *questions = self.details[@"questions"];
+        return questions.count;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSArray *questions = self.details[@"questions"];
     
-    return questions.count;
+    NSArray *options = self.details[@"options"];
+    
+    // if slider view
+    if (options == nil) {
+        NSArray *questions = self.details[@"questions"];
+        return questions.count;
+    }
+    else {
+        
+        
+        NSArray *question_options = options[section];
+        return question_options.count;
+        
+        
+    }
+    
 }
 
 
@@ -78,12 +103,13 @@
     }
     else {
         
-        cell = (RadioButtonCell *)[tableView dequeueReusableCellWithIdentifier:radioButtonCellIdentifier];
+        cell = [tableView dequeueReusableCellWithIdentifier:radioButtonCellIdentifier];
         
-        NSArray *question_options = options[indexPath.row];
-        if (!cell) {
+        NSArray *question_options = options[indexPath.section];
+        if (cell == nil) {
             cell = [[RadioButtonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:radioButtonCellIdentifier];
         }
+        
         [self configureRadioButtonCell:cell forIndexPath:indexPath withQuestionOptions:question_options];
         
     }
@@ -101,6 +127,11 @@
     cell.question.text      = questions[indexPath.row];
     cell.question.textColor = [self darkerColorForColor:self.navBarColor];
     cell.backgroundColor = [UIColor clearColor];
+    
+    
+    cell.slider.maximumValue = [self.details[@"max"] floatValue];
+    
+    NSLog(@"Slider Dictionary ===>    %@", _sliderDicValues);
     
     if([_sliderDicValues objectForKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]]) //check if there is any slided value is present
     {
@@ -132,40 +163,43 @@
 -(void)configureRadioButtonCell:(RadioButtonCell *)cell forIndexPath:(NSIndexPath *)indexPath withQuestionOptions:(NSArray *)question_options {
     
     cell.backgroundColor = [UIColor clearColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSArray *questions = self.details[@"questions"];
+    CGFloat optionHeight = [self findHeightForText:question_options[indexPath.row] havingWidth:self.tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Regular" size:14.f]].height;
     
-    CGFloat height = [self findHeightForText:questions[indexPath.row] havingWidth:self.tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Medium" size:15.f]].height;
     
-//    UILabel *question = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, self.tableView.frame.size.width - 8, height)];
     
-    cell.question.frame = CGRectMake(8, 8, self.tableView.frame.size.width - 8, height);
-    cell.question.textColor = [self darkerColorForColor:self.navBarColor];
-    cell.question.text       = questions[indexPath.row];
     
-    NSMutableArray *array = [[NSMutableArray alloc] init];
     
-    [question_options enumerateObjectsUsingBlock:^(NSString * _Nonnull option, NSUInteger idx, BOOL * _Nonnull stop) {
-        TNCircularRadioButtonData *button = [TNCircularRadioButtonData new];
-        button.labelText = option;
-        button.identifier = option;
-        if (idx == 0) {
-            button.selected = YES;
+    cell.radioButton.frame = CGRectMake(8, 0, self.tableView.frame.size.width - 8, optionHeight + (2*8));
+    cell.radioButton.tag = (indexPath.section * 50) + indexPath.row;
+    
+    
+    NSLog(@"Radio Dictionary %@", _radioButtonDicValues);
+    
+    
+    
+    if ([_radioButtonDicValues objectForKey:@(indexPath.section)]) {
+        
+        if (indexPath.row == [[_radioButtonDicValues objectForKey:@(indexPath.section)] integerValue]) {
+            [cell selectRadioButton];
         }
         else
-            button.selected = NO;
-        button.borderRadius = 12;
-        button.circleRadius = 5;
+            [cell deselectRadioButton];
         
-        [array addObject:button];
-    }];
+    }
+    else {
+        [cell deselectRadioButton];
+    }
+//    else if ( [cell.radioButton isSelected]) 
+//        [cell deselectRadioButton];
     
-//    TNRadioButtonGroup *group = [[TNRadioButtonGroup alloc] initWithRadioButtonData:array layout:TNRadioButtonGroupLayoutVertical];
-    cell.optionsGroup.radioButtonData = array;
-    cell.optionsGroup.layout           = TNRadioButtonGroupLayoutVertical;
-    cell.optionsGroup.identifier        = @"Options Group";
-    [cell.optionsGroup create];
-    cell.optionsGroup.position = CGPointMake(10, 8+height+8);
+    
+    
+    [cell.radioButton setTitle:question_options[indexPath.row] forState:UIControlStateNormal];
+    cell.delegate = self;
+    
+    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -173,10 +207,10 @@
     NSArray *questions = self.details[@"questions"];
     NSArray *options = self.details[@"options"];
     
-    CGFloat height1 = [self findHeightForText:questions[indexPath.row] havingWidth:self.tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Medium" size:15.f]].height;
+//    CGFloat height1 = [self findHeightForText:questions[indexPath.section] havingWidth:self.tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Medium" size:15.f]].height;
     
-    if (options[indexPath.row] == nil) {
-        NSString *string = questions[indexPath.row];
+    if (options[indexPath.section] == nil) {
+        NSString *string = questions[indexPath.section];
         
         CGFloat stringHeight = [self findHeightForText:string havingWidth:tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Medium" size:16.f]].height;
         
@@ -188,10 +222,10 @@
     }
     else {
         
-        NSArray *question_options = options[indexPath.row];
-        CGFloat height = height1 + (35 * question_options.count);
+        NSArray *question_options = options[indexPath.section];
         
-        return height;
+        CGFloat optionHeight = [self findHeightForText:question_options[indexPath.row] havingWidth:self.tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Regular" size:14.f]].height;
+        return optionHeight + (2*8);
     }
     
     return 100;
@@ -201,88 +235,158 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    NSArray *questions = self.details[@"questions"];
+    NSArray *options = self.details[@"options"];
+    
+    CGFloat height1 = [self findHeightForText:questions[section] havingWidth:self.tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Medium" size:15.f]].height;
+    
+    
+    // Header text
     NSString *string = self.details[@"header"];
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:string attributes:@{
                                                                                                           NSFontAttributeName : [UIFont fontWithName:@"AvenirNext-Medium" size:16.f]
                                                                                                           }];
     
-    return [self findHeightForText:attributedString havingWidth:tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Medium" size:16.f]].height;
+    CGFloat questionHeight = [self findHeightForText:questions[section] havingWidth:self.tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Medium" size:15.f]].height;
+    
+    CGFloat textHeight = [self findHeightForText:attributedString havingWidth:tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Medium" size:16.f]].height;
+    
+    
+    
+    if (options == nil) {
+        if (section == 0) {
+            
+            return textHeight;
+        }
+        else
+            return 1.0f;
+    }
+    else {
+        
+        if (section == 0) {
+            CGFloat sectionHeight = textHeight + questionHeight + (2*8);
+            
+            return sectionHeight;
+        }
+        else
+            return height1 + (2*8);
+    }
+    
+    
 }
 
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    NSString *string = self.details[@"header"];
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string attributes:@{
-                                                                                                          NSFontAttributeName : [UIFont fontWithName:@"AvenirNext-Medium" size:16.f]
-                                                                                                          }];
-    CGFloat height = [self findHeightForText:attributedString havingWidth:tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Medium" size:16.f]].height;
+    
+    NSArray *options = self.details[@"options"];
     
     
     
-    
-    
-    NSArray *array = [string componentsSeparatedByString:@"\n\n"];
-    NSLog(@"%@", array);
-    
-    
-    for (int i=0; i<2; i++) {
-        NSRange range = [string rangeOfString:array[i]];
-        
-        if (i == 0) {
-            [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"AvenirNext-Bold" size:18.f] range:range];
-        }
-        else
-            [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"AvenirNext-DemiBold" size:16.f] range:range];
-        
-        [attributedString addAttribute:NSForegroundColorAttributeName value:[self darkerColorForColor:self.navBarColor] range:NSMakeRange(0, string.length)];
-        
-
-    }
-    
-
-    
-    
+    CGFloat height = [self findHeightForText:[self attributedHeaderString] havingWidth:self.tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Medium" size:16.f]].height;
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, height)];
     headerView.backgroundColor = [UIColor clearColor];
     
     UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, height)];
-    textView.attributedText      = attributedString;
+    textView.attributedText      = [self attributedHeaderString];
     textView.textAlignment = NSTextAlignmentCenter;
     textView.scrollEnabled = NO;
     textView.editable = NO;
     textView.backgroundColor = [UIColor clearColor];
     
     [headerView addSubview:textView];
-    return headerView;
+    
+    // if slider view
+    if (options == nil) {
+        
+        if (section == 0) {
+            
+            
+            return headerView;
+        }
+        else
+            return [[UIView alloc] initWithFrame:CGRectZero];
+        
+    }
+    else {
+        
+        
+        UILabel *question = [[UILabel alloc] init];
+        question.font = [UIFont fontWithName:@"AvenirNext-Medium" size:15.f];
+        question.numberOfLines = 0;
+        
+        
+        
+        
+        NSArray *questions = self.details[@"questions"];
+        
+        CGFloat questionHeight = [self findHeightForText:questions[section] havingWidth:self.tableView.frame.size.width andFont:[UIFont fontWithName:@"AvenirNext-Medium" size:15.f]].height;
+        
+        question.textColor = [self darkerColorForColor:self.navBarColor];
+        question.text       = questions[section];
+        
+        
+        if (section == 0) {
+            
+            question.frame = CGRectMake(8, 8 + height, self.tableView.frame.size.width - 8, questionHeight);
+            // increase height of headerview
+            
+            headerView.frame = CGRectMake(0, 0, tableView.frame.size.width, height + questionHeight + 8 + 8);
+            
+            [headerView addSubview:question];
+            
+            return headerView;
+        }
+        else {
+            
+            UIView *questionHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, questionHeight + (2*8))];
+            
+            question.frame = CGRectMake(8, 8, self.tableView.frame.size.width - 8, questionHeight);
+            [questionHeaderView addSubview:question];
+            
+            return questionHeaderView;
+        }
+        
+    }
+    
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 50.f;
+    
+    NSArray *questions = self.details[@"questions"];
+    NSArray *options = self.details[@"options"];
+    
+    NSInteger lastIndex = [questions indexOfObject:questions.lastObject];
+    
+    
+    if (options == nil) {
+        return 80.f;
+    }
+    else if (section == lastIndex) {
+        return 80.f;
+    }
+    else
+        return 1.f;
 }
 
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 50)];
     
-    CGFloat width = tableView.frame.size.width;
-    NSLog(@"Width %f", width);
-    UIButton *resultButton = [[UIButton alloc] initWithFrame:CGRectMake(0, footerView.frame.size.height/2 - 22.5f, width, 45.f)];
+    NSArray *options = self.details[@"options"];
+    NSArray *questions = self.details[@"questions"];
+    NSInteger lastIndex = [questions indexOfObject:questions.lastObject];
     
-    NSLog(@"Button %@", NSStringFromCGRect(resultButton.frame));
-    NSLog(@"ContentView %@", NSStringFromCGRect(self.contentView.frame));
-    NSLog(@"View %@", NSStringFromCGRect(self.view.frame));
-    resultButton.backgroundColor = [UIColor whiteColor];
-    [resultButton setTitle:@"GET RESULT" forState:UIControlStateNormal];
-    [resultButton setTitleColor:[self darkerColorForColor:self.navBarColor] forState:UIControlStateNormal];
-    [resultButton.titleLabel setFont:[UIFont fontWithName:@"AvenirNext-Medium" size:16.f]];
-    resultButton.layer.cornerRadius = 25.f;
-    resultButton.layer.masksToBounds = YES;
+    if (options == nil) {
+        return [self footerButton];
+    }
+    else if (section == lastIndex) {
+        
+        return [self footerButton];
+    }
+    else
+        return nil;
     
-    [footerView addSubview:resultButton];
-    
-    return footerView;
 }
 
 
@@ -313,5 +417,430 @@
     
     return size;
 }
+
+
+-(NSMutableAttributedString *)attributedHeaderString {
+    
+    NSString *string = self.details[@"header"];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string attributes:@{
+                                                                                                                        NSFontAttributeName : [UIFont fontWithName:@"AvenirNext-Medium" size:16.f]
+                                                                                                                        }];
+    
+    
+    
+    
+    
+    
+    NSArray *array = [string componentsSeparatedByString:@"\n\n"];
+//    NSLog(@"%@", array);
+    
+    
+    for (int i=0; i<2; i++) {
+        NSRange range = [string rangeOfString:array[i]];
+        
+        if (i == 0) {
+            [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"AvenirNext-Bold" size:18.f] range:range];
+        }
+        else
+            [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"AvenirNext-DemiBold" size:16.f] range:range];
+        
+        [attributedString addAttribute:NSForegroundColorAttributeName value:[self darkerColorForColor:self.navBarColor] range:NSMakeRange(0, string.length)];
+        
+        
+    }
+    
+    
+    return attributedString;
+}
+
+-(UIView *)footerButton {
+    
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _tableView.frame.size.width, 80)];
+    
+    CGFloat width = _tableView.frame.size.width;
+    
+    UIButton *resultButton = [[UIButton alloc] initWithFrame:CGRectMake(0, footerView.frame.size.height/2 - 22.5f, width, 45.f)];
+    
+    resultButton.backgroundColor = [UIColor whiteColor];
+    [resultButton setTitle:@"GET RESULT" forState:UIControlStateNormal];
+    [resultButton setTitleColor:[self darkerColorForColor:self.navBarColor] forState:UIControlStateNormal];
+    [resultButton.titleLabel setFont:[UIFont fontWithName:@"AvenirNext-Medium" size:16.f]];
+    [resultButton addTarget:self action:@selector(tappedResults) forControlEvents:UIControlEventTouchUpInside];
+    resultButton.layer.cornerRadius = 25.f;
+    resultButton.layer.masksToBounds = YES;
+    
+    [footerView addSubview:resultButton];
+    
+    return footerView;
+}
+
+
+
+-(void)radioButtonCellDidSelect:(RadioButtonCell *)selectedCell {
+    NSIndexPath *selectedPath = [self.tableView indexPathForCell:selectedCell];
+    
+    
+    [_radioButtonDicValues setObject:@(selectedPath.row) forKey:@(selectedPath.section)];
+    
+    for (int section = 0; section < [self.tableView numberOfSections]; section++) {
+        NSLog(@"Radio section %d", section);
+        if(section == selectedPath.section) {
+            
+            NSLog(@"Selected section %d", section);
+            for (int row = 0; row < [self.tableView numberOfRowsInSection:section]; row++) {
+                NSIndexPath *cellPath = [NSIndexPath indexPathForRow:row inSection:section];
+                RadioButtonCell *cell = (RadioButtonCell*)[self.tableView cellForRowAtIndexPath:cellPath];
+                
+                NSLog(@"Cell is Selected");
+                if(selectedPath.row != cellPath.row) {
+                    [cell deselectRadioButton];
+                }
+            }
+        }
+    }
+    
+
+}
+
+
+
+-(NSInteger)calculateSliderTotal {
+    
+    __block NSInteger total = 0;
+    
+    [_sliderDicValues enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, NSNumber * _Nonnull obj, BOOL * _Nonnull stop) {
+        total += obj.integerValue;
+    }];
+    
+    NSLog(@"Total is %d", total);
+    
+    return total;
+}
+
+
+-(NSInteger)calculateRadioButtonTotal {
+    
+    __block NSInteger total = 0;
+    
+    [_radioButtonDicValues enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, NSNumber * _Nonnull obj, BOOL * _Nonnull stop) {
+        total += obj.integerValue;
+    }];
+    
+    NSLog(@"Radio Total is %d", total);
+    
+    return total;
+}
+
+
+
+
+-(void)tappedResults {
+    
+    NSInteger ans = [self calculateSliderTotal];
+    NSInteger ansr = [self calculateRadioButtonTotal];
+    
+    NSArray *results = self.details[@"results"];
+    NSString *message;
+    
+    switch (self.index) {
+        case 0:
+        {
+            if(ans>=0 && ans <5)
+            {
+                message = results[0];
+            }
+            else if(ans >=5 && ans <= 9)
+            {
+                message = results[1];
+            }
+            else if (ans >=10 && ans <=14)
+            {
+                message = results[2];
+            }
+            else if (ans >=15 && ans <=19)
+            {
+                message = results[3];
+            }
+            else if (ans==20)
+            {
+                message = results[4];
+            }
+            else if (ans >=21 && ans <=25)
+            {
+                message = results[5];
+            }
+            else if (ans >=26 && ans <=30)
+            {
+                message = results[6];
+            }
+            else if (ans >=31 && ans <=35)
+            {
+                message = results[7];
+            }
+        }
+            break;
+            
+        case 1:
+        {
+            if(ans>=0 && ans <10){
+                
+                message = results[0];
+            }
+            else if (ans >=10 && ans <=40)
+            {
+                message = results[1];
+            }
+            else if (ans >=41 && ans <=80)
+            {
+                message = results[2];
+            }
+            else if (ans >=81 && ans <=120)
+            {
+                message = results[3];
+            }
+            else if (ans >=121 && ans <=160)
+            {
+                message = results[4];
+            }
+            else if (ans >=161 && ans <=200)
+            {
+                message = results[5];
+            }
+        }
+            break;
+            
+        case 2:
+        {
+            if (ansr >=0 && ansr <= 7)
+            {
+                message = results[0];
+            }
+            else if (ansr >= 8 && ansr <= 15)
+            {
+                message = results[1];
+            }
+            else if (ansr >= 16 && ansr <= 19)
+            {
+                message = results[2];
+            }
+            else if (ansr >= 20)
+            {
+                message = results[3];
+            }
+        }
+            break;
+            
+        case 3:
+        {
+            if (ansr >=0 && ansr <= 7)
+            {
+                message = results[0];
+            }
+            else if (ansr >= 8 && ansr <= 14)
+            {
+                message = results[1];
+            }
+            else if (ansr >= 15 && ansr <= 21)
+            {
+                message = results[2];
+            }
+            else if (ansr >= 22)
+            {
+                message = results[3];
+            }
+        }
+            break;
+            
+            
+        case 4:
+        {
+            if(ans>=0 && ans <=19){
+                
+                message = results[0];
+            }
+            else if (ans >=20 && ans <=39)
+            {
+                message = results[1];
+            }
+            else if (ans >=40 && ans <=56)
+            {
+                message = results[2];
+            }
+        }
+            break;
+            
+        case 5:
+        {
+            if (ans <= 14)
+            {
+                message = results[0];
+            }
+            else if (ans >= 15 && ans <=25)
+            {
+                message = results[1];
+            }
+            else if (ans >= 26 && ans <=30)
+            {
+                message = results[2];
+            }
+        }
+            break;
+            
+        case 6:
+        {
+            if (ans < 36)
+            {
+                message = results[0];
+            }
+            else if (ans >= 36)
+            {
+                message = results[1];
+            }
+        }
+            break;
+            
+        case 7:
+        {
+            if (ansr >=0 && ansr <= 15)
+            {
+                message = results[0];
+            }
+            else if (ansr >=16 && ansr <=25)
+            {
+                message = results[1];
+            }
+            else if (ansr >= 25 && ansr <= 32)
+            {
+                message = results[2];
+            }
+        }
+            break;
+            
+        case 8:
+        {
+            if (ans <= 10)
+            {
+                message = results[0];
+            }
+            else if (ans >=11 && ans <=19)
+            {
+                message = results[1];
+            }
+            else if (ans >=20 && ans <=35)
+            {
+                message = results[2];
+            }
+            else if (ans >=36 && ans <=50)
+            {
+                message = results[3];
+            }
+        }
+            break;
+            
+        case 9:
+        {
+            if (ans <= 11)
+            {
+                message = results[0];
+            }
+            else if (ans >=12 && ans <=27)
+            {
+                message = results[1];
+            }
+            else if (ans >=28 && ans <=43)
+            {
+                message = results[2];
+            }
+            else if (ans >=44 && ans <=60)
+            {
+                message = results[3];
+            }
+        }
+            break;
+            
+        case 10:
+        {
+            if (ans <= 19)
+            {
+                message = results[0];
+            }
+            else if (ans >=20 && ans <=24)
+            {
+                message = results[1];
+            }
+            else if (ans >=25 && ans <=29)
+            {
+                message = results[2];
+            }
+            else if (ans >=30 && ans <=50)
+            {
+                message = results[3];
+            }
+        }
+            break;
+            
+        case 11:
+        {
+            if (ans <= 5)
+            {
+                message = results[0];
+            }
+            else if (ans >=6 && ans <=10)
+            {
+                message = results[1];
+            }
+            else if (ans >=11 && ans <=15)
+            {
+                message = results[2];
+            }
+            else if (ans >=16 && ans <=21)
+            {
+                message = results[3];
+            }
+        }
+            break;
+            
+        case 12:
+        {
+            if (ans <= 11)
+            {
+                message = results[0];
+            }
+            else if (ans >=12 && ans <=22)
+            {
+                message = results[1];
+            }
+            else if (ans >=23 && ans <=35)
+            {
+                message = results[2];
+            }
+        }
+            break;
+            
+        default:
+        {
+            if (ansr >=0 && ansr <= 3)
+            {
+                message = results[0];
+            }
+            else if (ansr >= 3 && ansr <= 12)
+            {
+                message = results[1];
+            }
+            else if (ansr >= 12 && ansr <= 20)
+            {
+                message = results[2];
+            }
+        }
+            break;
+    }
+    
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Results" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    
+    [alert show];
+    
+}
+
 
 @end

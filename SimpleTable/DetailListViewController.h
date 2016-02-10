@@ -15,5 +15,7 @@
 @property (nonatomic, strong) NSArray *attributedArray;
 @property (nonatomic)   NSInteger main_index;
 
+@property (nonatomic)   NSInteger second_index;
+
 @property (nonatomic, strong) UIColor *textColor;
 @end

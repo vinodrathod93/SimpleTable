@@ -1,10 +1,10 @@
 PODS:
-  - TNRadioButtonGroup (0.4)
+  - MBProgressHUD (0.9.2)
 
 DEPENDENCIES:
-  - TNRadioButtonGroup
+  - MBProgressHUD (~> 0.9.1)
 
 SPEC CHECKSUMS:
-  TNRadioButtonGroup: f5fb9b545d8913bbabe6a72ea1fa6fba4d833bb6
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
 
 COCOAPODS: 0.39.0

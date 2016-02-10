@@ -10,6 +10,10 @@
 #import "SecondTableViewCell.h"
 #import "DetailListViewController.h"
 #import "AssessmentViewController.h"
+#import "MusicViewController.h"
+#import "ArticlesViewController.h"
+#import "DoodleViewController.h"
+#import "ReplaceViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface SecondListTableViewController ()
@@ -72,6 +76,11 @@
     
     // Configure the cell...
     
+    
+    if (self.mainIndex == 4) {
+        cell.listingLabel.font = [UIFont fontWithName:@"AvenirNext-Bold" size:18.f];
+    }
+    
     cell.backgroundColor = [UIColor clearColor];
     cell.listingLabel.textColor = [self darkerColorForColor:self.navBarcolor];
     cell.customView.layer.cornerRadius = 10.f;
@@ -79,7 +88,7 @@
     
     
     if (self.data) {
-        cell.listingLabel.text = [self.data[indexPath.section] capitalizedString];
+        cell.listingLabel.text = self.data[indexPath.section];
     }
     else
         cell.listingLabel.text = @"Listing 1";
@@ -89,7 +98,11 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 70;
+    if (self.mainIndex == 4) {
+        return 120;
+    }
+    else
+        return 70;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -111,42 +124,86 @@
     
     _index  = indexPath.section;
     
+    
+    switch (self.mainIndex) {
+        case 2:
+        {
+            AssessmentViewController *assessmentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"assessmentVC"];
+            assessmentVC.backgroundImageString = _backgroundImages[indexPath.section];
+            assessmentVC.title                 = self.data[indexPath.section];
+            assessmentVC.details               = [self getJSONDataDictionary];
+            assessmentVC.index                 = indexPath.section;
+            
+            if (indexPath.section == 5 || indexPath.section == 7 || indexPath.section == 8 || indexPath.section == 13) {
+                assessmentVC.navBarColor = [UIColor colorWithRed:32/255.f green:150/255.f blue:243/255.f alpha:1.0];
+                
+                
+            }
+            else if (indexPath.section == 2 || indexPath.section == 3 || indexPath.section == 4 || indexPath.section == 6 || indexPath.section == 10 || indexPath.section == 11 || indexPath.section == 12) {
+                assessmentVC.navBarColor = [UIColor colorWithRed:253/255.f green:216/255.f blue:53/255.f alpha:1.0];
+            }
+            else if (indexPath.section == 0 || indexPath.section == 1 || indexPath.section == 9) {
+                assessmentVC.navBarColor = [UIColor colorWithRed:255/255.f green:135/255.f blue:195/255.f alpha:1.0];
+            }
+            
+            
+            [self.navigationController pushViewController:assessmentVC animated:YES];
+        }
+            break;
+            
+        case 4:
+        {
+            if (indexPath.section == 0) {
+                DoodleViewController *doodleVC = [self.storyboard instantiateViewControllerWithIdentifier:@"doodleVC"];
+                doodleVC.title = @"De-Stress";
+                [self.navigationController pushViewController:doodleVC animated:YES];
+            }
+            else {
+                ReplaceViewController *replaceVC = [self.storyboard instantiateViewControllerWithIdentifier:@"replaceVC"];
+                [self.navigationController pushViewController:replaceVC animated:YES];
+            }
+            
+        }
+            break;
+            
+        case 5:
+        {
+            ArticlesViewController *articlesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"articlesWebVC"];
+            articlesVC.urlString = [self getJSONDataURL];
+            
+            [self.navigationController pushViewController:articlesVC animated:YES];
+        }
+            break;
+            
+        default:
+        {
+            DetailListViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"detailListVC"];
+            detailVC.title = [self.data[indexPath.section] capitalizedString];
+            detailVC.bg_image = self.bg_image;
+            detailVC.second_index = indexPath.section;
+            
+            if (self.mainIndex == 0) {
+                detailVC.attributedArray = _attributedArrays[indexPath.section];
+            }
+            
+            detailVC.main_index     = self.mainIndex;
+            
+            NSArray *detailsArray = [self getJSONDataArray];
+            detailVC.detailsArray = detailsArray;
+            
+            [self.navigationController pushViewController:detailVC animated:YES];
+        }
+            break;
+    }
+    
+    
+    
     if (self.mainIndex == 2) {
-        AssessmentViewController *assessmentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"assessmentVC"];
-        assessmentVC.backgroundImageString = _backgroundImages[indexPath.section];
-        assessmentVC.title                 = self.data[indexPath.section];
-        assessmentVC.details               = [self getJSONDataDictionary];
         
-        if (indexPath.section == 5 || indexPath.section == 7 || indexPath.section == 8 || indexPath.section == 13) {
-            assessmentVC.navBarColor = [UIColor colorWithRed:32/255.f green:150/255.f blue:243/255.f alpha:1.0];
-            
-            
-        }
-        else if (indexPath.section == 2 || indexPath.section == 3 || indexPath.section == 4 || indexPath.section == 6 || indexPath.section == 10 || indexPath.section == 11 || indexPath.section == 12) {
-            assessmentVC.navBarColor = [UIColor colorWithRed:253/255.f green:216/255.f blue:53/255.f alpha:1.0];
-        }
-        else if (indexPath.section == 0 || indexPath.section == 1 || indexPath.section == 9) {
-            assessmentVC.navBarColor = [UIColor colorWithRed:255/255.f green:135/255.f blue:195/255.f alpha:1.0];
-        }
-        
-        
-        [self.navigationController pushViewController:assessmentVC animated:YES];
     }
     else {
         
-        DetailListViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"detailListVC"];
-        detailVC.bg_image = self.bg_image;
         
-        if (self.mainIndex == 0) {
-            detailVC.attributedArray = _attributedArrays[indexPath.section];
-        }
-        
-        detailVC.main_index     = self.mainIndex;
-        
-        NSArray *detailsArray = [self getJSONDataArray];
-        detailVC.detailsArray = detailsArray;
-        
-        [self.navigationController pushViewController:detailVC animated:YES];
     }
     
     
@@ -174,6 +231,16 @@
     return data;
 }
 
+-(NSString *)getJSONDataURL {
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];
+    NSData *root = [NSData dataWithContentsOfFile:jsonPath];
+    
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:root options:NSJSONReadingMutableLeaves error:nil];
+    
+    NSString *data = dict[self.jsonKey][_index];
+    
+    return data;
+}
 
 - (UIColor *)darkerColorForColor:(UIColor *)c
 {

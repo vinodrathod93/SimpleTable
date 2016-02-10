@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SliderAssessmentTableViewCell.h"
+#import "RadioButtonCell.h"
 
 @interface AssessmentViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, SliderAssessmentDelegate>
 
@@ -17,4 +18,6 @@
 @property (strong, nonatomic) NSString *backgroundImageString;
 @property (strong, nonatomic) UIColor *navBarColor;
 @property (strong, nonatomic) NSDictionary *details;
+
+@property (assign, nonatomic) NSInteger index;
 @end
